@@ -3,4 +3,6 @@
 import commands
 foo = commands.getoutput("df -h")
 
-print foo
+file = open("foo","a")
+file.write(foo)
+file.write("\n\n")
