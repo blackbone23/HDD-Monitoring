@@ -4,7 +4,7 @@ sudo apt-get install php5-fpm
 sudo apt-get install php-cli
 sudo apt-get install mysql-server-5.1
 sudo apt-get install php5-mysql
-
+sudo apt-get install python-mysqldb
 
 check php5-mysql : 
 dpkg --list | grep php5-mysql
