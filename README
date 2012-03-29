@@ -5,9 +5,14 @@ sudo apt-get install php-cli
 sudo apt-get install mysql-server-5.1
 sudo apt-get install php5-mysql
 sudo apt-get install python-mysqldb
+sudo apt-get install libapache2-mod-php5
+
+=============================================================
 
 configuring apache2 : 
 sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/hdd_monitor (tambahkan site baru di dalam apache)
+
+=============================================================
 
 edit file /etc/apache2/sites-available/hdd_monitor : 
 Change DocumentRoot /var/www to DocumentRoot /home/${user}/public_html.
@@ -16,7 +21,16 @@ Change <Directory /var/www/> to <Directory /home/${user}/public_html/>.
 
 Scroll down the file until you see the part “<Directory /home/${user}/public_html/>“. Underneath that line of code, change AllowOverride None to AllowOverride All.
 
-nb : ${user} = nama user di ubuntu
+	nb : ${user} = nama user di ubuntu
+
+================================================================
+Configuring /etc/apache2/httpd.conf : 
+<VirtualHost *>
+ServerName localhost
+DocumentRoot /home/rully/public_html/
+</VirtualHost>
+
+================================================================
 
 sudo a2dissite default && sudo a2ensite hdd_monitor
 
