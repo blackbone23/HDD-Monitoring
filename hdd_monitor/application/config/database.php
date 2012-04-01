@@ -43,7 +43,11 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
+<<<<<<< HEAD
 $db['default']['password'] = '';
+=======
+$db['default']['password'] = 'slamdunk';
+>>>>>>> c00866ad14d83a081ea2b22cff1174cf4a0810b8
 $db['default']['database'] = 'hdd_monitor';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
