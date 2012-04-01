@@ -2,7 +2,10 @@
 
 class Hdd_monitor extends CI_Controller {
 
-
+        public function __construct() {
+		parent::__construct();
+ 		$this->load->library('session');
+	}
 	public function index()
 	{
             // echo "Halo duniaa!!!";
@@ -10,6 +13,23 @@ class Hdd_monitor extends CI_Controller {
             $this->load->view('templates/template',$data);
         }
         
+        public function validate_login() {
+//            echo "hallo";
+            $this->load->model('user');
+            $query = $this->user->validasi();
+            if($query) {
+                $session = array(
+                    'username' => $this->input->post('username'),
+                    'is_logged_in' => true
+                );
+                $this->session->set_userdata($session);
+                redirect('site/admin');
+            }
+            else {
+                redirect('hdd_monitor');
+            }
+        }
+
         public function fungsibaru() {
             echo "Ini adalah fungsi baru";
         }

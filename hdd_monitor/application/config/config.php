@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://rully.rnd/HDD-Monitoring/';
+$config['base_url']	= 'http://localhost/HDD-Monitoring/hdd_monitor/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '1AoLAs9wa771OS2pmJf4za30rYlx5XQV';
 
 /*
 |--------------------------------------------------------------------------

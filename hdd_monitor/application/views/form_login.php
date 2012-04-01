@@ -3,7 +3,7 @@
 
     <div align="center">
         <?php
-            echo form_open('login/validate_login')."<br/>";
+            echo form_open('hdd_monitor/validate_login')."<br/>";
             echo form_input('username', 'Username')."<br/>";
             echo form_input('password', 'Password')."<br>";
             echo form_submit('submit', 'Login to Member Area');
