@@ -5,8 +5,9 @@ class Hdd_monitor extends CI_Controller {
 
 	public function index()
 	{
-            echo "Halo duniaa!!!";
-
+            // echo "Halo duniaa!!!";
+            $data['dynamiccontent'] = "form_login";
+            $this->load->view('templates/template',$data);
         }
         
         public function fungsibaru() {
