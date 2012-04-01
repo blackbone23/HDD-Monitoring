@@ -26,7 +26,7 @@ CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `username` varchar(45) DEFAULT NULL,
-  `usercol` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-03-30 20:54:22
+-- Dump completed on 2012-04-01 15:59:17
