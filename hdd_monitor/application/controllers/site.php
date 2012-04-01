@@ -7,7 +7,10 @@ class Site extends CI_Controller {
         }
 	public function admin()
 	{
+	    $this->load->helper('file');
             $data['dynamiccontent'] = "admin";
+	    $data['title'] = "admin site";
+	    //$data['df'] = exec("php execution.php");
             $this->load->view('templates/template',$data);
         }
 
