@@ -1,7 +1,24 @@
 Filesystem            Size  Used Avail Use% Mounted on
-/dev/sda6             9.1G  3.9G  4.8G  46% /
-none                  997M  644K  997M   1% /dev
-none                 1006M  2.3M 1004M   1% /dev/shm
-none                 1006M  344K 1006M   1% /var/run
-none                 1006M     0 1006M   0% /var/lock
+/dev/sda1              39G  8.0G   29G  22% /
+udev                  2.8G  4.0K  2.8G   1% /dev
+tmpfs                 1.2G  1.1M  1.2G   1% /run
+none                  5.0M     0  5.0M   0% /run/lock
+none                  2.8G  1.6M  2.8G   1% /run/shm
+/dev/sda2             249G  162G   76G  69% /home
+
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda1              39G  8.0G   29G  22% /
+udev                  2.8G  4.0K  2.8G   1% /dev
+tmpfs                 1.2G  1.1M  1.2G   1% /run
+none                  5.0M     0  5.0M   0% /run/lock
+none                  2.8G  1.6M  2.8G   1% /run/shm
+/dev/sda2             249G  162G   76G  69% /home
+
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda1              39G  8.0G   29G  22% /
+udev                  2.8G  4.0K  2.8G   1% /dev
+tmpfs                 1.2G  1.1M  1.2G   1% /run
+none                  5.0M     0  5.0M   0% /run/lock
+none                  2.8G  1.6M  2.8G   1% /run/shm
+/dev/sda2             249G  162G   76G  69% /home
 
