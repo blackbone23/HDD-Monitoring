@@ -53,5 +53,14 @@ dpkg --list | grep php5-mysql
 
 
 ===============================================================
+install python package : 
+
+sudo apt-get install python-setuptools python-dev
+
+psutil :
+sudo pip install psutil
+
+
+===============================================================
 
 to contact me : Rully - 082153354799 (pin bb : 2156D3C9)
