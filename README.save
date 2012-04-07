@@ -1,0 +1,69 @@
+must installed first : 
+sudo apt-get install apache2
+sudo apt-get install php5-fpm
+sudo apt-get install php5-cli
+sudo apt-get install mysql-server-5.1
+sudo apt-get install php5-mysql
+sudo apt-get install python-mysqldb
+sudo apt-get install libapache2-mod-php5
+
+=============================================================
+
+configuring apache2 : 
+sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/hdd_monitor (tambahkan site baru di dalam apache)
+
+=============================================================
+
+edit file /etc/apache2/sites-available/hdd_monitor : 
+
+add -> ServerName ${your_server_name} (sebelum DocumentRoot & hilangkan ServerAdmin)
+
+Change DocumentRoot /var/www to DocumentRoot /home/${user}/public_html.
+
+Change <Directory /var/www/> to <Directory /home/${user}/public_html/>.
+
+Scroll down the file until you see the part “<Directory /home/${user}/public_html/>“. Underneath that line of code, change AllowOverride None to AllowOverride All.
+
+	nb : ${user} = nama user di ubuntu
+
+================================================================
+Configuring /etc/apache2/httpd.conf : 
+<VirtualHost *>
+ServerName localhost
+DocumentRoot /home/rully/public_html/
+</VirtualHost>
+
+================================================================
+
+edit /etc/hosts : 
+
+-- add new dns record --
+127.0.1.1 / ${IP_target}	${your_server_name}
+
+================================================================
+
+sudo a2dissite default && sudo a2ensite hdd_monitor
+
+sudo a2ensite hdd_monitor
+sudo service apache2 reload
+
+
+check php5-mysql : 
+dpkg --list | grep php5-mysql
+
+
+===============================================================
+install python package : 
+
+sudo apt-get install python-setuptools python-dev
+
+install pip:
+sudo easy_install pip
+
+psutil :
+sudo pip install psutil
+
+
+===============================================================
+
+to contact me : Rully - 082153354799 (pin bb : 2156D3C9)
