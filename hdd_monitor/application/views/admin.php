@@ -3,7 +3,7 @@
         echo "Haloo <br/>";
         echo "Username anda : ".$this->session->userdata('username');
 	echo "<br/>";
-        @var_dump($rowrecord);
+        @var_dump(json_encode($rowrecord));
     ?>
     <h3>Tambah data</h3>
     <?php echo form_open('site/tambah_data');?>

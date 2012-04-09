@@ -10,28 +10,37 @@ class Modelhddmonitor extends CI_Model {
         return $query->result();
     }
 
-    function tambah_data($data) {
+    public function ambil_data_hdd_device() {
+        $query = $this->db->query("select device,filetype from hdd_device");
+        return $query->result();
+    }
+
+    public function ambil_data_hdd_status() {
+        $query = $this->db->get("hdd_status");
+        return $query->result();
+    }
+
+    public function tambah_data($data) {
         $hasil = $this->db->insert('tester_post',$data);
         return;
     }
 
-    function tambah_data_disk_partition($data) {
+    public function tambah_data_disk_partition($data) {
         $hasil = $this->db->insert('hdd_device',$data);
         return;
     }
 
-    function tambah_data_disk_status($data) {
+    public function tambah_data_disk_status($data) {
         $hasil = $this->db->insert('hdd_status',$data);
         return;
     }
 
-    function update_data($data) {
+    public function update_data($data) {
         $this->db->where('id',1);
         $this->db->update('latihan2',$data);
     }
 
-    function delete_row($data) {
-//     	echo $data;
+    public function delete_row($data) {
     	$this->db->where('id',$data);
     	$this->db->delete('latihan2');
     	return ;
