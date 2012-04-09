@@ -4,7 +4,7 @@ import psutil
 import json
 import MySQLdb
 partitions = psutil.disk_partitions()
-db = MySQLdb.connect(host="0.0.0.0",port=3306,user="root",passwd="slamdunk",db="hdd_monitor" )
+db = MySQLdb.connect(host="0.0.0.0",port=3306,user="root",passwd="bippo",db="hdd_monitor" )
 cursor = db.cursor()
 latest_id = cursor.execute("select id_status from hdd_status order by id_status DESC")
 for partition in partitions :
