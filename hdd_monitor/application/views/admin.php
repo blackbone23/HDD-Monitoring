@@ -2,7 +2,8 @@
     <?php
         echo "Haloo <br/>";
         echo "Username anda : ".$this->session->userdata('username');
-        var_dump($rowrecord);
+	echo "<br/>";
+        @var_dump($rowrecord);
     ?>
     <h3>Tambah data</h3>
     <?php echo form_open('site/tambah_data');?>

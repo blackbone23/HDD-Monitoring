@@ -10,10 +10,10 @@ class Site extends CI_Controller {
 		public function admin()
 		{
 	    	$this->load->helper('file');
-            $data['dynamiccontent'] = "admin";
+            	$data['dynamiccontent'] = "admin";
 	    	$data['title'] = "admin site";
 	    	if($query = $this->modelhddmonitor->ambil_data()) {
-            	$data['rowrecord'] = $query;
+            		$data['rowrecord'] = $query;
 	        }
             $this->load->view('templates/template',$data);
             
