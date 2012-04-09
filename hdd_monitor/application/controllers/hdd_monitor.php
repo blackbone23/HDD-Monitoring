@@ -10,6 +10,7 @@ class Hdd_monitor extends CI_Controller {
 	{
             // echo "Halo duniaa!!!";
             $data['dynamiccontent'] = "form_login";
+	    $data['title'] = "Hardisk Monitoring by Ryan Maulana Pakar";
             $this->load->view('templates/template',$data);
         }
         

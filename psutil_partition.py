@@ -1,28 +1,29 @@
 #!/usr/bin/python
 
 import psutil
-import json
-import MySQLdb
-partitions = psutil.disk_partitions()
-db = MySQLdb.connect(host="0.0.0.0",port=3306,user="root",passwd="slamdunk",db="hdd_monitor" )
-cursor = db.cursor()
-latest_id = cursor.execute("select id_dev from hdd_device order by id_dev DESC")
-for partition in partitions :
-  if (partition.mountpoint == "/" or partition.mountpoint == "/home"):
-    IP_address = "192.168.11.31"
-    dev = partition.device
-    mount =  partition.mountpoint
-    filestype = partition.fstype
-    #check_json = json.dumps({'mount on':mount, 'filetype':filesystype, 'device':device})
-    #print check_json
-    latest_id = latest_id + 1
-    try:
-      cursor.execute("""INSERT INTO hdd_device VALUES (%s,%s,%s,%s,%s)""" , (latest_id,IP_address,dev,filestype,mount))
-      db.commit()
-      print "data berhasil diinputkan"
-    except:
-      db.rollback()
-      print "data tidak berhasil diinputkan"
+import socket
+import pycurl
+import urllib
 
-db.close()
+partitions = psutil.disk_partitions()
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("gmail.com",80))
+IP = s.getsockname()[0]
+for partition in partitions :
+    if (partition.mountpoint == "/" or partition.mountpoint == "/home"):
+	dev = partition.device
+	mount =  partition.mountpoint
+	filestype = partition.fstype
+	#check_json = json.dumps({'mount on':mount, 'filetype':filesystype, 'device':device})
+	#print check_json
+	c = pycurl.Curl()
+	data = [('IP',IP),('device',dev),('filetype',filestype),('mount_on',mount)]
+	resp_data = urllib.urlencode(data)
+	c.setopt(pycurl.URL, 'http://rully.rnd/HDD-Monitoring/hdd_monitor/index.php/site/add_disk_partition')
+	c.setopt(pycurl.POST, 1)
+	c.setopt(pycurl.POSTFIELDS, resp_data)
+	c.perform()
+	c.close()
+    
   
+s.close()

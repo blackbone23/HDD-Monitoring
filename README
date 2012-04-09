@@ -64,5 +64,21 @@ psutil :
 sudo pip install psutil
 
 ===============================================================
+Get IP address : 
+sebenernya sih bebas mau coba cari IP public pake cara bneran ato cara abal2.. pake cara bneran bisa kek gini : 
+
+import urllib
+IP = urllib.urlopen('http://automation.whatismyip.com/n09230945.asp').read()
+print IP
+
+cuman masalahnya di kita khn kebanyakan IP nya dynamic. So buat pemecahannya gini.. Asumsi saja bahwa si server terhubung langsung ke internet lewat IP static public. Jadi pemecahan si script adalah sebagai berikut : 
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("gmail.com",80))
+IP = s.getsockname()[0]
+s.close()
+
+
+===============================================================
 
 to contact me : Rully - 082153354799 (pin bb : 2156D3C9)

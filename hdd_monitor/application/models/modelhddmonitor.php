@@ -12,13 +12,16 @@ class Modelhddmonitor extends CI_Model {
 
     function tambah_data($data) {
         $hasil = $this->db->insert('tester_post',$data);
-        #if(isset($hasil)) {
-        #	$value = "input data berhasil";
-        #}
-        #else {
-        #	$value = "input data tidak berhasil";
-        #}
-        #return $value;
+        return;
+    }
+
+    function tambah_data_disk_partition($data) {
+        $hasil = $this->db->insert('hdd_device',$data);
+        return;
+    }
+
+    function tambah_data_disk_status($data) {
+        $hasil = $this->db->insert('hdd_status',$data);
         return;
     }
 
