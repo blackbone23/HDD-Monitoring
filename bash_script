@@ -1,0 +1,6 @@
+Get date time
+echo $(date --rfc-3339=date)
+echo $(date --rfc-3339=seconds)
+echo $(date --rfc-3339=ns)
+
+echo $(date ++%k:%M:%S)
