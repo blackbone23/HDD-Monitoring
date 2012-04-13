@@ -1,0 +1,3 @@
+- setelah data dikirimkan via curl, sebisa mungkin data di cek berdasarkan IP pengirim. Jika pengirim berbeda maka data akan direject
+
+
