@@ -8,14 +8,65 @@ class Site extends CI_Controller {
         }
 	
 	public function admin() {
-		$data['dynamiccontent'] = "admin";
-		$data['title'] = "admin site";
-		if($query = $this->modelhddmonitor->ambil_data_hdd_device()) {
-			$data['rowrecord'] = $query;
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$data['dynamiccontent'] = "admin";
+			$data['title'] = "admin site";
+			if($query = $this->modelhddmonitor->ambil_data_hdd_device()) {
+				$data['rowrecord'] = $query;
+			}
+			$this->load->view('templates/template',$data);
+		} else {
+			redirect('hdd_monitor');
 		}
-		$this->load->view('templates/template',$data);
             
             
+        }
+
+	public function logout() {
+		$this->session->unset_userdata('username');
+		redirect('hdd_monitor');
+	}
+	
+	public function edit_person_info() {
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$data['title'] = "Edit Account - ".$this->session->userdata('username');
+	      		$data['dynamiccontent'] = "edit_person";
+			$this->load->model('user');
+			$query = $this->user->get_user();
+			$data['user'] = $query;
+			$this->load->view('templates/template',$data);
+		} else {
+			redirect('hdd_monitor');
+		}
+	}
+
+        public function edit_account() {
+		echo "disini script untuk edit account";
+		$new_username = $this->input->post('new_username');
+		$new_password = $this->input->post('new_password');
+		$data = array(
+			'id_user' => $this->input->post('id_user'),
+			'name' => $this->input->post('name'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'IP' => $this->input->post('IP')
+		);
+
+		if (!empty($new_username) && !empty($new_password)) {
+			$data['username'] = $new_username;
+			$data['password'] = $new_password;
+		} else if (!empty($new_username)) {
+			$data['username'] = $new_username;
+		} else if (!empty($new_password)) {
+			$data['password'] = $new_password;
+		} else {
+			
+		}
+		$this->load->model('user');
+		$this->user->update_user($data);
+		redirect('site/edit_person_info');
         }
 		
 	 public function tambah_data() {
@@ -32,7 +83,7 @@ class Site extends CI_Controller {
 
 		if(!isset($is_logged_in) || $is_logged_in != true) {
 			redirect('hdd_monitor');
-		}
+		} 
         }
 
 	public function add_disk_partition() {

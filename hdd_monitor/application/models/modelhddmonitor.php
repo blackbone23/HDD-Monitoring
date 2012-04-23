@@ -10,6 +10,11 @@ class Modelhddmonitor extends CI_Model {
         return $query->result();
     }
 
+    public function ambil_data_user() {
+        $query = $this->db->get("user");
+        return $query->result();
+    }
+
     public function ambil_data_hdd_device() {
         $query = $this->db->query("select device,filetype from hdd_device");
         return $query->result();

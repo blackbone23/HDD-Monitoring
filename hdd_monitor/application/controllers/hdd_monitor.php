@@ -15,7 +15,6 @@ class Hdd_monitor extends CI_Controller {
         }
         
         public function validate_login() {
-//            echo "hallo";
             $this->load->model('user');
             $query = $this->user->validasi();
             if($query) {
