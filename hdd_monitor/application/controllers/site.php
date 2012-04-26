@@ -3,24 +3,22 @@
 class Site extends CI_Controller {
 
         public function __construct() {
-            parent::__construct();
-            $this->load->model('modelhddmonitor');
+            	parent::__construct();
+            	$this->load->model('modelhddmonitor');
         }
 	
 	public function admin() {
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
 			$data['dynamiccontent'] = "admin";
-			$data['title'] = "admin site";
-			if($query = $this->modelhddmonitor->ambil_data_hdd_device()) {
-				$data['rowrecord'] = $query;
-			}
+			$data['title'] = "Welcome - $username";
+			$this->load->model("modelhddmonitor");
+			$query = $this->modelhddmonitor->view_device();
+			$data['query'] = $query;
 			$this->load->view('templates/template',$data);
 		} else {
 			redirect('hdd_monitor');
 		}
-            
-            
         }
 
 	public function logout() {
@@ -108,10 +106,29 @@ class Site extends CI_Controller {
 			'used' => $this->input->post('used'),
 			'free' => $this->input->post('free'),
 			'percent' => $this->input->post('percent'),
-			'total' => $this->input->post('total')
+			'total' => $this->input->post('total'),
+			'date' => $this->input->post('date'),
+			'time' => $this->input->post('time')
 			);
 		$this->modelhddmonitor->tambah_data_disk_status($data);
 		redirect('site/admin');
+	}
+
+	public function view_statistic() {
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$IP = $_GET['IP'];
+			$data['IP'] = $IP;
+			$data['dynamiccontent'] = "view_statistic";
+			$data['title'] = "view statistic";
+			$this->load->model("modelhddmonitor");
+			$query = $this->modelhddmonitor->view_statistic_raw($IP);
+			$data['query'] = $query;
+			$this->load->view('templates/template',$data);
+		} else {
+			redirect('hdd_monitor');
+		}
+		
 	}
       
 }

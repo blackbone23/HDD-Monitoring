@@ -1,26 +1,24 @@
 <div id="haloo">
-<?php
-        echo "Username anda : ".$this->session->userdata('username');
-	echo "<br/>";
-       // @var_dump(json_encode($rowrecord));
+    <?php
+        $username = $this->session->userdata('username');
+	echo "Username anda : $username";
     ?>
-    <h3>Tambah data</h3>
-    <?php echo form_open('site/tambah_data');?>
-    <label for="konten1">Konten1 : </label>
-    <input type="text" name="content1" id="content1"/>
-    
-    <label for="konten2">Konten2 : </label>
-    <input type="text" name="content2" id="content2"/>
-    
-    <label for="submit"><input type="submit" value="submit"/></label>
-    <?php form_close();?>
-
-    <br/><br/>
-    <a href="edit_person_info">edit personal info</a>
-    <a href="logout">logout</a>
-<?php
-    #$this->session->unset_userdata('username');
-
-?>
+    <h3>Checking Partition for : <?php echo $username ?></h3>
+    <table border='1' cellspacing='0' cellpadding='5'>
+        <tr>
+	    <th>IP</th>
+	    <th>device</th>
+	    <th>filetype</th>
+	    <th>mount on</th>
+        </tr>
+    <?php foreach ($query as $row) : ?>
+	<tr>
+	    <td><a href="view_statistic?IP=<?php echo $row->IP ?>" ><?php echo $row->IP ?></a></td>
+	    <td><?php echo $row->device ?></td>
+	    <td><?php echo $row->filetype ?></td>
+	    <td><?php echo $row->mount_on ?></td>
+	</tr>
+    <?php endforeach; ?>
+    </table>
     
 </div>

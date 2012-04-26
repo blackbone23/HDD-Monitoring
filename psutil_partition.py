@@ -4,6 +4,7 @@ import psutil
 import socket
 import pycurl
 import urllib
+import commands
 
 partitions = psutil.disk_partitions()
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -14,8 +15,6 @@ for partition in partitions :
 	dev = partition.device
 	mount =  partition.mountpoint
 	filestype = partition.fstype
-	#check_json = json.dumps({'mount on':mount, 'filetype':filesystype, 'device':device})
-	#print check_json
 	c = pycurl.Curl()
 	data = [('IP',IP),('device',dev),('filetype',filestype),('mount_on',mount)]
 	resp_data = urllib.urlencode(data)

@@ -74,3 +74,145 @@
 [24-Apr-2012 02:23:19] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
 [24-Apr-2012 02:23:19] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
 [24-Apr-2012 02:23:19] PHP   4. Site->edit_account() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 22:40:35] PHP Fatal error:  Call to undefined method Modelhddmonitor::veiw_statistic_raw() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 124
+[26-Apr-2012 22:40:35] PHP Stack trace:
+[26-Apr-2012 22:40:35] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 22:40:35] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 22:40:35] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[26-Apr-2012 22:40:35] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 22:40:48] PHP Fatal error:  Call to undefined method Modelhddmonitor::veiw_statistic_raw() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 124
+[26-Apr-2012 22:40:48] PHP Stack trace:
+[26-Apr-2012 22:40:48] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 22:40:48] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 22:40:48] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[26-Apr-2012 22:40:48] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 22:58:05] PHP Parse error:  syntax error, unexpected '[' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 57
+[26-Apr-2012 22:58:05] PHP Stack trace:
+[26-Apr-2012 22:58:05] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 22:58:05] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 22:58:05] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[26-Apr-2012 22:58:05] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[26-Apr-2012 23:02:05] PHP Fatal error:  Call to undefined function msql_query() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 60
+[26-Apr-2012 23:02:05] PHP Stack trace:
+[26-Apr-2012 23:02:05] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:02:05] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:02:05] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[26-Apr-2012 23:02:05] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 23:02:05] PHP   5. Modelhddmonitor->view_statistic_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:126
+[26-Apr-2012 23:02:22] PHP Fatal error:  Call to a member function result() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 61
+[26-Apr-2012 23:02:22] PHP Stack trace:
+[26-Apr-2012 23:02:22] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:02:22] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:02:22] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[26-Apr-2012 23:02:22] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 23:02:22] PHP   5. Modelhddmonitor->view_statistic_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:126
+[26-Apr-2012 23:05:01] PHP Parse error:  syntax error, unexpected T_ARRAY in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 60
+[26-Apr-2012 23:05:01] PHP Stack trace:
+[26-Apr-2012 23:05:01] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:05:01] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:05:01] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[26-Apr-2012 23:05:01] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[26-Apr-2012 23:05:05] PHP Parse error:  syntax error, unexpected T_ARRAY in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 60
+[26-Apr-2012 23:05:05] PHP Stack trace:
+[26-Apr-2012 23:05:05] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:05:05] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:05:05] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[26-Apr-2012 23:05:05] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[26-Apr-2012 23:05:07] PHP Parse error:  syntax error, unexpected T_ARRAY in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 60
+[26-Apr-2012 23:05:07] PHP Stack trace:
+[26-Apr-2012 23:05:07] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:05:07] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:05:07] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[26-Apr-2012 23:05:07] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[26-Apr-2012 23:43:14] PHP Parse error:  syntax error, unexpected T_ECHO in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/admin.php on line 4
+[26-Apr-2012 23:43:14] PHP Stack trace:
+[26-Apr-2012 23:43:14] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:43:14] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:43:14] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[26-Apr-2012 23:43:14] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 23:43:14] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:18
+[26-Apr-2012 23:43:14] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[26-Apr-2012 23:43:14] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[26-Apr-2012 23:43:14] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[26-Apr-2012 23:43:14] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[26-Apr-2012 23:43:51] PHP Parse error:  syntax error, unexpected T_ECHO in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/admin.php on line 4
+[26-Apr-2012 23:43:51] PHP Stack trace:
+[26-Apr-2012 23:43:51] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:43:51] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:43:51] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[26-Apr-2012 23:43:51] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 23:43:51] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:18
+[26-Apr-2012 23:43:51] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[26-Apr-2012 23:43:51] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[26-Apr-2012 23:43:51] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[26-Apr-2012 23:43:51] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[26-Apr-2012 23:43:54] PHP Parse error:  syntax error, unexpected T_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/admin.php on line 4
+[26-Apr-2012 23:43:54] PHP Stack trace:
+[26-Apr-2012 23:43:54] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[26-Apr-2012 23:43:54] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[26-Apr-2012 23:43:54] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[26-Apr-2012 23:43:54] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[26-Apr-2012 23:43:54] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:18
+[26-Apr-2012 23:43:54] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[26-Apr-2012 23:43:54] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[26-Apr-2012 23:43:54] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[26-Apr-2012 23:43:54] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[27-Apr-2012 00:18:53] PHP Parse error:  syntax error, unexpected T_RETURN in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 67
+[27-Apr-2012 00:18:53] PHP Stack trace:
+[27-Apr-2012 00:18:53] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:18:53] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:18:53] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[27-Apr-2012 00:18:53] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[27-Apr-2012 00:24:07] PHP Fatal error:  Call to undefined method CI_DB_mysql_result::order_by() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 55
+[27-Apr-2012 00:24:07] PHP Stack trace:
+[27-Apr-2012 00:24:07] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:24:07] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:24:07] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[27-Apr-2012 00:24:07] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[27-Apr-2012 00:24:07] PHP   5. Modelhddmonitor->view_statistic_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:125
+[27-Apr-2012 00:24:28] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 56
+[27-Apr-2012 00:24:28] PHP Stack trace:
+[27-Apr-2012 00:24:28] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:24:28] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:24:28] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[27-Apr-2012 00:24:28] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[27-Apr-2012 00:24:39] PHP Fatal error:  Call to undefined method CI_DB_mysql_driver::result() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 57
+[27-Apr-2012 00:24:39] PHP Stack trace:
+[27-Apr-2012 00:24:39] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:24:39] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:24:39] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[27-Apr-2012 00:24:39] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[27-Apr-2012 00:24:39] PHP   5. Modelhddmonitor->view_statistic_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:125
+[27-Apr-2012 00:25:08] PHP Fatal error:  Call to undefined method CI_DB_mysql_result::order_by() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 55
+[27-Apr-2012 00:25:08] PHP Stack trace:
+[27-Apr-2012 00:25:08] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:25:08] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:25:08] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[27-Apr-2012 00:25:08] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[27-Apr-2012 00:25:08] PHP   5. Modelhddmonitor->view_statistic_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:125
+[27-Apr-2012 00:27:00] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 55
+[27-Apr-2012 00:27:00] PHP Stack trace:
+[27-Apr-2012 00:27:00] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:27:00] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:27:00] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[27-Apr-2012 00:27:00] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[27-Apr-2012 00:27:23] PHP Fatal error:  Call to undefined method CI_DB_mysql_driver::result() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 56
+[27-Apr-2012 00:27:23] PHP Stack trace:
+[27-Apr-2012 00:27:23] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:27:23] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:27:23] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[27-Apr-2012 00:27:23] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[27-Apr-2012 00:27:23] PHP   5. Modelhddmonitor->view_statistic_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:125
+[27-Apr-2012 00:27:54] PHP Fatal error:  Call to undefined method CI_DB_mysql_result::order_by() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 55
+[27-Apr-2012 00:27:54] PHP Stack trace:
+[27-Apr-2012 00:27:54] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:27:54] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:27:54] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[27-Apr-2012 00:27:54] PHP   4. Site->view_statistic() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[27-Apr-2012 00:27:54] PHP   5. Modelhddmonitor->view_statistic_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:125
+[27-Apr-2012 00:28:56] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 55
+[27-Apr-2012 00:28:56] PHP Stack trace:
+[27-Apr-2012 00:28:56] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 00:28:56] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 00:28:56] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[27-Apr-2012 00:28:56] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7

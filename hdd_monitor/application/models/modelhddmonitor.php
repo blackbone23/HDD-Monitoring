@@ -50,5 +50,20 @@ class Modelhddmonitor extends CI_Model {
     	$this->db->delete('latihan2');
     	return ;
     }
+
+    public function view_statistic_raw($data) {
+	$query =$this->db->select('*')->from('hdd_status')->where('IP', $data)->order_by('id_status','desc')->get();
+	return $query->result();
+    }
+
+    public function view_device() {
+        $username = $this->session->userdata('username');
+        $user = $this->db->query("select * from user where username = '$username'");
+        $user_result =  $user->result();
+	$spesific_user = $user_result[0];
+	$IP = $spesific_user->IP;
+	$query = $this->db->get_where('hdd_device', array('IP' => $IP));
+	return $query->result();
+    }
 }
 ?>
