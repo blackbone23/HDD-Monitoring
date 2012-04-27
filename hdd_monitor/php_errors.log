@@ -291,3 +291,19 @@
 [27-Apr-2012 21:44:47] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
 [27-Apr-2012 21:44:47] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
 [27-Apr-2012 21:44:47] PHP   5. Modelhddmonitor->view_device() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:16
+[27-Apr-2012 22:00:19] PHP Fatal error:  Call to undefined method Modelhddmonitor::view_statistic_raw() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 125
+[27-Apr-2012 22:00:19] PHP Stack trace:
+[27-Apr-2012 22:00:19] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 22:00:19] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 22:00:19] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[27-Apr-2012 22:00:19] PHP   4. Site->view_statistic_from_IP_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[27-Apr-2012 22:00:26] PHP Fatal error:  Call to undefined method Modelhddmonitor::view_statistic_raw() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 125
+[27-Apr-2012 22:00:26] PHP Stack trace:
+[27-Apr-2012 22:00:26] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 22:00:26] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[27-Apr-2012 22:00:26] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[27-Apr-2012 22:00:26] PHP   4. Site->view_statistic_from_IP_raw() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[27-Apr-2012 22:38:18] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 53
+[27-Apr-2012 22:38:18] PHP Stack trace:
+[27-Apr-2012 22:38:18] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[27-Apr-2012 22:38:18] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201

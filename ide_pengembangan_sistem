@@ -1,3 +1,5 @@
 - setelah data dikirimkan via curl, sebisa mungkin data di cek berdasarkan IP pengirim. Jika pengirim berbeda maka data akan direject
+- jika kapasitas hdd sudah terpakai 85%, kirim email ke admin yg menggunakan email tsb
+- 
 
 

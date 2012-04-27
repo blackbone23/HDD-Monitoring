@@ -51,8 +51,13 @@ class Modelhddmonitor extends CI_Model {
     	return ;
     }
 
-    public function view_statistic_raw($data) {
+    public function view_statistic_from_IP_raw($data) {
 	$query =$this->db->select('*')->from('hdd_status')->where('IP', $data)->order_by('id_status','desc')->get();
+	return $query->result();
+    }
+
+     public function view_statistic_from_device_raw($IP, $device) {
+	$query =$this->db->select('*')->from('hdd_status')->where('IP', $IP)->where('device', $device)->order_by('id_status','desc')->get();
 	return $query->result();
     }
 

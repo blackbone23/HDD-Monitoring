@@ -49,7 +49,8 @@ class Site extends CI_Controller {
 			'name' => $this->input->post('name'),
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
-			'IP' => $this->input->post('IP')
+			'IP' => $this->input->post('IP'),
+			'email' => $this->input->post('email')
 		);
 
 		if (!empty($new_username) && !empty($new_password)) {
@@ -114,7 +115,7 @@ class Site extends CI_Controller {
 		redirect('site/admin');
 	}
 
-	public function view_statistic() {
+	public function view_statistic_from_IP_raw() {
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
 			$IP = $_GET['IP'];
@@ -122,7 +123,25 @@ class Site extends CI_Controller {
 			$data['dynamiccontent'] = "view_statistic";
 			$data['title'] = "view statistic";
 			$this->load->model("modelhddmonitor");
-			$query = $this->modelhddmonitor->view_statistic_raw($IP);
+			$query = $this->modelhddmonitor->view_statistic_from_IP_raw($IP);
+			$data['query'] = $query;
+			$this->load->view('templates/template',$data);
+		} else {
+			redirect('hdd_monitor');
+		}
+		
+	}
+
+	public function view_statistic_from_device_raw() {
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$IP = $_GET['IP'];
+			$device = $_GET['device'];
+			$data['IP'] = $IP;
+			$data['dynamiccontent'] = "view_statistic";
+			$data['title'] = "view statistic";
+			$this->load->model("modelhddmonitor");
+			$query = $this->modelhddmonitor->view_statistic_from_device_raw($IP, $device);
 			$data['query'] = $query;
 			$this->load->view('templates/template',$data);
 		} else {
