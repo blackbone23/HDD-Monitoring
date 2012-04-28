@@ -35,5 +35,7 @@
 
     <?php form_close();?>
 
+    <br/><br/>
+    <a href="admin">Back to home</a>
     
 </div>
