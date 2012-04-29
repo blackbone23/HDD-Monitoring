@@ -21,9 +21,13 @@ for partition in partitions :
 	percent = disk.percent
 	total = disk.total
 	date = commands.getoutput("date --rfc-3339=date")
+	date_split = date.split("-")
+	year = date_split[0]
+	month = date_split[1]
+	day = date_split[2]
 	time = commands.getoutput("date +%k:%M:%S")
 	c = pycurl.Curl()
-	data = [('IP',IP),('device',dev),('filetype',filestype),('mount_on',mount),('used',used),('free',free),('percent',percent),('total',total), ('date',date), ('time',time)]
+	data = [('IP',IP),('device',dev),('filetype',filestype),('mount_on',mount),('used',used),('free',free),('percent',percent),('total',total), ('time',time), ('day',day), ('month',month), ('year',year)]
 	resp_data = urllib.urlencode(data)
 	c.setopt(pycurl.URL, 'http://rully.tr4c3r.dev/HDD-Monitoring/hdd_monitor/index.php/site/add_disk_status')
 	c.setopt(pycurl.POST, 1)

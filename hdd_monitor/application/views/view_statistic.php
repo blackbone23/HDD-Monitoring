@@ -4,9 +4,9 @@
     ?>
     <br/>
     <br/>
-    <a href="admin">< previous</a>
+    <a href="admin">< previous</a>  &nbsp;&nbsp;&nbsp;    <a href="chart">view graph</a>
     <br/>
-    <h3>Statistic for IP : <?php echo $IP ?></h3>
+    <h3>Statistic for IP : <?php echo $IP ?> <?php echo (!empty($device)) ? "on partition ".$device : "on all partition" ?></h3>
     
     <table border='1' cellspacing='0' cellpadding='10'>
         <tr>
@@ -27,7 +27,7 @@
 	<?php ++$i ?>
 	<tr>
 	    <td><?php echo $i ?></td>
-	    <td><?php echo $row->date ?></td>
+	    <td><?php echo $row->day."-".$row->month."-".$row->year ?></td>
 	    <td><?php echo $row->time ?></td>
 	    <td><?php echo $row->IP ?></td>
 	    <td><?php echo $row->device ?></td>

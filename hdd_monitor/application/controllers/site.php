@@ -108,8 +108,10 @@ class Site extends CI_Controller {
 			'free' => $this->input->post('free'),
 			'percent' => $this->input->post('percent'),
 			'total' => $this->input->post('total'),
-			'date' => $this->input->post('date'),
-			'time' => $this->input->post('time')
+			'time' => $this->input->post('time'),
+			'day' => $this->input->post('day'),
+			'month' => $this->input->post('month'),
+			'year' => $this->input->post('year')
 			);
 		$this->modelhddmonitor->tambah_data_disk_status($data);
 		redirect('site/admin');
@@ -118,12 +120,13 @@ class Site extends CI_Controller {
 	public function view_statistic_from_IP_raw() {
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
-			$IP = $_GET['IP'];
-			$data['IP'] = $IP;
+			$url = parse_url($_SERVER['REQUEST_URI']);
+			parse_str($url['query'], $params);
+			$data['IP'] = $params['IP'];
 			$data['dynamiccontent'] = "view_statistic";
 			$data['title'] = "view statistic";
 			$this->load->model("modelhddmonitor");
-			$query = $this->modelhddmonitor->view_statistic_from_IP_raw($IP);
+			$query = $this->modelhddmonitor->view_statistic_from_IP_raw($data['IP']);
 			$data['query'] = $query;
 			$this->load->view('templates/template',$data);
 		} else {
@@ -135,19 +138,24 @@ class Site extends CI_Controller {
 	public function view_statistic_from_device_raw() {
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
-			$IP = $_GET['IP'];
-			$device = $_GET['device'];
-			$data['IP'] = $IP;
+			$url = parse_url($_SERVER['REQUEST_URI']);
+			parse_str($url['query'], $params);
+			$data['IP'] = $params['IP'];
+			$data['device'] = $params['device'];
 			$data['dynamiccontent'] = "view_statistic";
 			$data['title'] = "view statistic";
 			$this->load->model("modelhddmonitor");
-			$query = $this->modelhddmonitor->view_statistic_from_device_raw($IP, $device);
+			$query = $this->modelhddmonitor->view_statistic_from_device_raw($data['IP'], $data['device']);
 			$data['query'] = $query;
 			$this->load->view('templates/template',$data);
 		} else {
 			redirect('hdd_monitor');
 		}
 		
+	}
+	public function chart() {
+ 		$this->view_data = array();
+		$this->load->view("view_charts", $this->view_data);
 	}
       
 }
