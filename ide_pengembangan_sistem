@@ -1,5 +1,5 @@
 - setelah data dikirimkan via curl, sebisa mungkin data di cek berdasarkan IP pengirim. Jika pengirim berbeda maka data akan direject
 - jika kapasitas hdd sudah terpakai 85%, kirim email ke admin yg menggunakan email tsb
-- 
+- Untuk halaman admin, tampilkan hanya IP saja. 1 IP = 1 HDD, untuk partisi gunakan lagi query tambahan untuk membuat dropdown select untuk pilihan view statistic dari partisi tersebut.
 
 
