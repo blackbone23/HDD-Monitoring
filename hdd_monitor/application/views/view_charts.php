@@ -45,8 +45,26 @@ code {
 }
 
 </style>
-
+<?php 
+    function switch_month($month) {
+	switch($month) {
+	    case "01" : return "January";
+	    case "02" : return "February";
+            case "03" : return "March";
+	    case "04" : return "April";
+	    case "05" : return "May";
+	    case "06" : return "June";
+	    case "07" : return "July";
+	    case "08" : return "August";
+	    case "09" : return "September";
+	    case "10" : return "October";
+	    case "11" : return "November";
+	    case "12" : return "December";
+	}
+    }
+?>
 <script type="text/javascript">
+
     var chart1; // globally available
 	$(document).ready(function() {
             chart1 = new Highcharts.Chart({
@@ -55,10 +73,10 @@ code {
                 type: 'line'
              },
              title: {
-                text: 'HDD Space Consumption Month <?php echo "January" ?>'
+                text: 'HDD Space Consumption Month <?php echo switch_month($month) ?>'
              },
 	     subtitle: {
-                text: 'Source : http://rully.tr4c3r.dev/'
+                text: 'Source : http://<?php echo $IP ?>'
              },
              xAxis: {
                 categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
@@ -88,10 +106,10 @@ code {
              },
              series: [{
                 name: '/dev/sda1 (/)',
-                data: [10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 99, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14, 14]
+                data: [10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14, 10, 99, 14, 10, 0, 14, 10, 0, 14, 10, 0, 14]
              }, {
                 name: '/dev/sda2 (/home)',
-                data: [5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 7]
+                data: [5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3, 5, 7, 3]
              }]
           });
        });
@@ -102,13 +120,57 @@ code {
 
 <h1>Testing Highcharts</h1>
 
-<div id="container">
-
-</div>
-
+	<?php echo $grafik == "no" ? "no result for your query" : "<div id='container'></div>" ; ?>
+	
 <div id="bottom_nav">
 	<input type=button value="Back" onClick="window.history.back()">
 </div>
+
+<?php 
+    if($device == "all") { 
+        $sql = mysql_query("select device from hdd_device where IP = '$IP'");
+	while ($row = mysql_fetch_assoc($sql)) {
+	    $devices[] = $row['device'];
+	}
+	foreach ($devices as $device) {
+	    $sql2 = mysql_query("select percent, mount_on, device, day, month, year from hdd_status where IP = '$IP' and device = '$device' and month = '$month' and year = '$year' order by day");
+	    $i = 1;
+	        while ($row2 = mysql_fetch_assoc($sql2)) {
+		    if($row2['day'] - 10 < 0) {
+			$row2['day'] = substr($row2['day'], -1);
+		    }
+		    echo $i.",";
+		    echo $row2['day'].";";
+			
+		    if(($i %$row2['day']) == 1) { 
+			for($n = $i; $n<$row2['day']; $n++) {
+			    $percents[] = "0";
+		            $device = $row2['device'];
+		            $mount_point = $row2['mount_on'];
+			}
+			$percents[] = $row2['percent'];	
+		    } else {			    
+                        $percents[] = $row2['percent'];
+		        $device = $row2['device'];
+		        $mount_point = $row2['mount_on'];
+
+		    }
+                
+ 	        $i++;
+	    }
+	    $value = implode(",",$percents);
+	    $datas[] = "{ name: '$device ($mount_point)', data : [$value]}";
+	    $percents = "";
+	}
+	$data = implode(",",$datas);
+	echo $data;
+
+    } else { 
+	$sql = mysql_query("select device from hdd_device where IP = '$IP'");
+	    while ($row = mysql_fetch_object($sql)) {
+		echo "halo";
+	    }
+    } ?>
 
 </body>
 </html>

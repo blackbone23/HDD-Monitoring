@@ -68,8 +68,9 @@ class Modelhddmonitor extends CI_Model {
 	$spesific_user = $user_result[0];
 	$range_IP = $spesific_user->IP;
 	$IP_arr = explode(", ",$range_IP);
-	$query = $this->db->from('hdd_device')->where_in('IP', $IP_arr)->get();
+	$query = $this->db->select("IP")->distinct()->from('hdd_device')->where_in('IP', $IP_arr)->get();
 	return $query->result();
     }
+
 }
 ?>
