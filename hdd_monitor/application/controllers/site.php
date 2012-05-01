@@ -160,28 +160,36 @@ class Site extends CI_Controller {
 			$decode = urldecode($_SERVER['REQUEST_URI']);
 			$url = parse_url($decode);
 			parse_str($url['query'], $params);
-			if($params['device'] != "-" && $params['month'] != "-" && $params['year'] != "-") {
-				$data['IP'] = $params['IP'];
-				$data['device'] = $params['device'];
-				$data['month'] = $params['month'];
-				$data['year'] = $params['year'];
-				$data['grafik'] = "yes";
-				$data['view_data'] = $this->view_data;
-				$this->load->view("view_charts", $data);
-			} elseif ($params['month'] != "-" && $params['year'] != "-") {
-				$data['device'] = "all";
-				$data['IP'] = $params['IP'];
-				$data['month'] = $params['month'];
-				$data['year'] = $params['year'];
-				$data['grafik'] = "yes";
-				$data['view_data'] = $this->view_data;
-				$this->load->view("view_charts", $data);
-			
-			} else {
+			$query =$this->db->select('*')->from('hdd_status')->where(array('IP'=> $params['IP'],'month'=>$params['month'],'year'=>$params['year']))->order_by('id_status','desc')->get();
+			$cek = $query->result();
+			if(empty($cek)) {
 				$data['grafik'] = "no";
 				$data['view_data'] = $this->view_data;
 				$this->load->view("view_charts", $data);
+			} else {
+				if($params['device'] != "-" && $params['month'] != "-" && $params['year'] != "-") {
+					$data['IP'] = $params['IP'];
+					$data['device'] = $params['device'];
+					$data['month'] = $params['month'];
+					$data['year'] = $params['year'];
+					$data['grafik'] = "yes";
+					$data['view_data'] = $this->view_data;
+					$this->load->view("view_charts", $data);
+				} elseif ($params['month'] != "-" && $params['year'] != "-") {
+					$data['device'] = "all";
+					$data['IP'] = $params['IP'];
+					$data['month'] = $params['month'];
+					$data['year'] = $params['year'];
+					$data['grafik'] = "yes";
+					$data['view_data'] = $this->view_data;
+					$this->load->view("view_charts", $data);
+				} else {
+					$data['grafik'] = "no";
+					$data['view_data'] = $this->view_data;
+					$this->load->view("view_charts", $data);
+				}
 			}
+			
 		} else {
 			redirect('hdd_monitor');
 		}
