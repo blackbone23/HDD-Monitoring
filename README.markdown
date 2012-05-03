@@ -87,4 +87,9 @@ sudo pip install urllib3
 
 ===============================================================
 
+send mail menggunakan ssmtp -> http://tombuntu.com/index.php/2008/10/21/sending-email-from-your-system-with-ssmtp/
+
+
+===============================================================
+
 to contact me : Rully - 082153354799 (pin bb : 2156D3C9)
