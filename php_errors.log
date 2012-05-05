@@ -1,0 +1,7 @@
+[05-May-2012 14:13:15] PHP Warning:  fopen(/home/rully/git/HDD-Monitoring/template_email) [<a href='http://localhost/php-doc/function.fopen.html'>function.fopen.html</a>]: failed to open stream: No such file or directory in /home/rully/git/HDD-Monitoring/file.php on line 2
+[05-May-2012 14:13:15] PHP Stack trace:
+[05-May-2012 14:13:15] PHP   1. {main}() /home/rully/git/HDD-Monitoring/file.php:0
+[05-May-2012 14:13:15] PHP   2. fopen() /home/rully/git/HDD-Monitoring/file.php:2
+[05-May-2012 14:18:24] PHP Warning:  Invalid argument supplied for foreach() in /home/rully/git/HDD-Monitoring/file.php on line 3
+[05-May-2012 14:18:24] PHP Stack trace:
+[05-May-2012 14:18:24] PHP   1. {main}() /home/rully/git/HDD-Monitoring/file.php:0
