@@ -91,5 +91,17 @@ send mail menggunakan ssmtp -> http://tombuntu.com/index.php/2008/10/21/sending-
 
 
 ===============================================================
+Cronjob : 
+
+Menggunakan crontab
+
+1. Cron untuk per disk usage dilakukan perhari (file : psutil_disk_usage.py)
+2. Cron untuk check persentase hdd dilakukan per 10 menit (file : psutil_disk_usage_alarm.py)
+
+3. File untuk cek partisi dieksekusi sendiri / tidak dijadikan cron (file : psutil_partition.py)
+
+
+
+===============================================================
 
 to contact me : Rully - 082153354799 (pin bb : 2156D3C9)

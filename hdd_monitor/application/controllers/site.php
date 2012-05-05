@@ -194,6 +194,53 @@ class Site extends CI_Controller {
 			redirect('hdd_monitor');
 		}
 	}
+	
+	public function add_disk_alert() {
+		$this->load->helper('file');
+		$this->load->library('email');
+		
+		$IP = $this->input->post('IP');
+		$device = $this->input->post('device');
+		$filetype = $this->input->post('filetype');
+		$mount_on = $this->input->post('mount_on');
+		$used = ((($this->input->post('used')/1024)/1024)/1024);
+		$used_explode = explode(".",$used);
+		$used_explode_2 = substr($used_explode[1], 0, 3);
+		$used_to_send = $used_explode[0].".".$used_explode_2." GB";
+		$free = ((($this->input->post('free')/1024)/1024)/1024);
+		$free_explode = explode(".",$free);
+		$free_explode_2 = substr($free_explode[1], 0, 3);
+		$free_to_send = $free_explode[0].".".$free_explode_2." GB";
+		$percent = $this->input->post('percent');
+		$total = ((($this->input->post('total')/1024)/1024)/1024);
+		$total_explode = explode(".",$total);
+		$total_explode_2 = substr($total_explode[1], 0, 3);
+		$total_to_send = $total_explode[0].".".$total_explode_2." GB";
+		
+		$query = $this->db->select('name, IP, email')->from("user")->get();
+
+		foreach ($query->result() as $row) :
+			$list_IP = explode(", ", $row->IP);
+			foreach ($list_IP as $IP_check) :
+				if($IP_check == $IP) :
+					$row->email;
+					$this->email->from('rully.lukman@gmail.com', 'Administrator');
+					$this->email->to($row->email);
+
+					$this->email->subject('Warning, your server hard disk exceed to 60%');
+					$this->email->message("Hello $row->name,\n\nI'm sorry for your inconvenience, but your hard disk resource is exceed to 80% from total capacity. Here's result from our HDD Checker :\n\nIP : $IP\nPartition : $device\nFiletype : $filetype\nMount on : $mount_on\nUsed : $used_to_send\nFree : $free_to_send\nTotal : $total_to_send\nPercent used : $percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator");
+
+					$this->email->send();
+					echo $this->email->print_debugger();
+				endif;
+			endforeach;
+			
+		endforeach;	
+			
+		
+			
+		
+	}
       
 }
 

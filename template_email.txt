@@ -1,5 +1,0 @@
-To: ryanpakar@gmail.com
-From: rully.lukman@gmail.com
-Subject: send mail using ssmtp
-
-Lg iseng kirim email dari terminal linux sendiri pake ssmtp :)

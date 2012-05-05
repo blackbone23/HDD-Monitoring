@@ -547,3 +547,45 @@
 [01-May-2012 23:51:52] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
 [01-May-2012 23:51:52] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
 [01-May-2012 23:51:52] PHP   8. get_data_percent() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php:237
+[05-May-2012 15:52:43] PHP Fatal error:  Call to undefined method CI_DB_mysql_driver::result() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 211
+[05-May-2012 15:52:43] PHP Stack trace:
+[05-May-2012 15:52:43] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 15:52:43] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 15:52:43] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[05-May-2012 15:52:43] PHP   4. Site->add_disk_alert() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[05-May-2012 17:08:37] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 206
+[05-May-2012 17:08:37] PHP Stack trace:
+[05-May-2012 17:08:37] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:08:37] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:09:55] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 207
+[05-May-2012 17:09:55] PHP Stack trace:
+[05-May-2012 17:09:55] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:09:55] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:10:19] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 206
+[05-May-2012 17:10:19] PHP Stack trace:
+[05-May-2012 17:10:19] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:10:19] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:10:30] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 207
+[05-May-2012 17:10:30] PHP Stack trace:
+[05-May-2012 17:10:30] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:10:30] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:10:41] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 207
+[05-May-2012 17:10:41] PHP Stack trace:
+[05-May-2012 17:10:41] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:10:41] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:11:41] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 208
+[05-May-2012 17:11:41] PHP Stack trace:
+[05-May-2012 17:11:41] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:11:41] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:11:52] PHP Parse error:  syntax error, unexpected ';' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 208
+[05-May-2012 17:11:52] PHP Stack trace:
+[05-May-2012 17:11:52] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:11:52] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:21:29] PHP Parse error:  syntax error, unexpected ')' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 206
+[05-May-2012 17:21:29] PHP Stack trace:
+[05-May-2012 17:21:29] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:21:29] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[05-May-2012 17:21:39] PHP Parse error:  syntax error, unexpected ')' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 208
+[05-May-2012 17:21:39] PHP Stack trace:
+[05-May-2012 17:21:39] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[05-May-2012 17:21:39] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
