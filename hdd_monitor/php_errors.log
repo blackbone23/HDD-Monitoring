@@ -589,3 +589,51 @@
 [05-May-2012 17:21:39] PHP Stack trace:
 [05-May-2012 17:21:39] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
 [05-May-2012 17:21:39] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 17:42:51] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 17:42:52] PHP Stack trace:
+[06-May-2012 17:42:52] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 17:42:52] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 17:42:52] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 17:42:52] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[06-May-2012 18:00:56] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 18:00:56] PHP Stack trace:
+[06-May-2012 18:00:56] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 18:00:56] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 18:00:56] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 18:00:56] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[06-May-2012 18:04:46] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 18:04:46] PHP Stack trace:
+[06-May-2012 18:04:46] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 18:04:46] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 18:04:46] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 18:04:46] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[06-May-2012 18:04:48] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 18:04:48] PHP Stack trace:
+[06-May-2012 18:04:48] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 18:04:48] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 18:04:48] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 18:04:48] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[06-May-2012 18:04:49] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 18:04:49] PHP Stack trace:
+[06-May-2012 18:04:49] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 18:04:49] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 18:04:49] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 18:04:49] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[06-May-2012 18:04:49] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 18:04:49] PHP Stack trace:
+[06-May-2012 18:04:49] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 18:04:49] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 18:04:49] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 18:04:49] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[06-May-2012 18:17:39] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 18:17:39] PHP Stack trace:
+[06-May-2012 18:17:39] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 18:17:39] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 18:17:39] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 18:17:39] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[06-May-2012 18:18:14] PHP Fatal error:  Call to undefined function ssh2_connect() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 243
+[06-May-2012 18:18:14] PHP Stack trace:
+[06-May-2012 18:18:14] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[06-May-2012 18:18:14] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[06-May-2012 18:18:14] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[06-May-2012 18:18:14] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0

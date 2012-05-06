@@ -15,7 +15,7 @@ for partition in partitions :
     filesystype = partition.fstype
     if(mount == "/") :
       check_slash = psutil.disk_usage(mount)
-      if(check_slash.percent >= 60):
+      if(check_slash.percent >= 80):
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	s.connect(("gmail.com",80))
 	IP = s.getsockname()[0]
@@ -29,7 +29,7 @@ for partition in partitions :
 	c.close()
     else :
       check_slash_home = psutil.disk_usage("/home")
-      if(check_slash_home.percent >= 60):
+      if(check_slash_home.percent >= 80):
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	s.connect(("gmail.com",80))
 	IP = s.getsockname()[0]

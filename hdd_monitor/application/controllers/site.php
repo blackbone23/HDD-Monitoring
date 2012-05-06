@@ -227,19 +227,33 @@ class Site extends CI_Controller {
 					$this->email->from('rully.lukman@gmail.com', 'Administrator');
 					$this->email->to($row->email);
 
-					$this->email->subject('Warning, your server hard disk exceed to 60%');
+					$this->email->subject('Warning, your server hard disk exceed to 80%');
 					$this->email->message("Hello $row->name,\n\nI'm sorry for your inconvenience, but your hard disk resource is exceed to 80% from total capacity. Here's result from our HDD Checker :\n\nIP : $IP\nPartition : $device\nFiletype : $filetype\nMount on : $mount_on\nUsed : $used_to_send\nFree : $free_to_send\nTotal : $total_to_send\nPercent used : $percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator");
 
 					$this->email->send();
 					echo $this->email->print_debugger();
 				endif;
 			endforeach;
-			
 		endforeach;	
+	}
+
+	public function view_hdd_status_now() {
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			if(!$ssh = ssh2_connect('192.168.11.31', 22)){
+				echo "Couldn't connect to 192.168.11.31!";
+			} else {
+				if(!ssh2_auth_password($ssh, 'rully', 'slamdunk')) {
+					echo "authentication rejected!";
+				} else {
+					$data_hdd_now = exec('/home/rully/git/HDD-Monitoring/psutil_disk_usage_json.py');
+					echo $data_hdd_now;
+				}
+			}
 			
-		
-			
-		
+		} else {
+			redirect('hdd_monitor');
+		}
 	}
       
 }

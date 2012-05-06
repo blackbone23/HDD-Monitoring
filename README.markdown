@@ -104,4 +104,24 @@ Menggunakan crontab
 
 ===============================================================
 
+install libssh2-php untuk ssh ke client : 
+
+sudo apt-get install libssh2-php
+
+restart service php
+
+
+install ssh2 via pecl : 
+
+sudo pecl install ssh2 channel://pecl.php.net/ssh2-0.11.3
+
+or,
+
+sudo pecl install ssh2 -> setelah liat version channel, copy & paste setelah ssh 2 dan install
+
+===============================================================
+
+PHP PACKAGE : Jika sudah depresi, gunakan install php5-dev dan masalah anda akan terselesaikan :P
+
+
 to contact me : Rully - 082153354799 (pin bb : 2156D3C9)
