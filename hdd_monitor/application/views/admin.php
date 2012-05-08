@@ -67,6 +67,7 @@
     </table>
     
     <br/>
+    <a href="view_hdd_status_now">View Your HDD Status Now</a> <br/>
     <a href="edit_person_info">Account Setting</a> <br/>
     <a href="logout">logout</a>
     

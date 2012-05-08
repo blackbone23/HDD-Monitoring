@@ -111,7 +111,7 @@ sudo apt-get install libssh2-php
 restart service php
 
 
-install ssh2 via pecl : 
+install ssh2 via pecl (TIDAK DIGUNAKAN, JELEK PISAN PACKAGENYA) : 
 
 sudo pecl install ssh2 channel://pecl.php.net/ssh2-0.11.3
 

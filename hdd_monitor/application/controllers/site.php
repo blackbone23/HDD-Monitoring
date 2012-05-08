@@ -198,25 +198,25 @@ class Site extends CI_Controller {
 	public function add_disk_alert() {
 		$this->load->helper('file');
 		$this->load->library('email');
-		
+
 		$IP = $this->input->post('IP');
 		$device = $this->input->post('device');
 		$filetype = $this->input->post('filetype');
 		$mount_on = $this->input->post('mount_on');
 		$used = ((($this->input->post('used')/1024)/1024)/1024);
 		$used_explode = explode(".",$used);
-		$used_explode_2 = substr($used_explode[1], 0, 3);
+		@$used_explode_2 = substr($used_explode[1], 0, 3);
 		$used_to_send = $used_explode[0].".".$used_explode_2." GB";
 		$free = ((($this->input->post('free')/1024)/1024)/1024);
 		$free_explode = explode(".",$free);
-		$free_explode_2 = substr($free_explode[1], 0, 3);
+		@$free_explode_2 = substr($free_explode[1], 0, 3);
 		$free_to_send = $free_explode[0].".".$free_explode_2." GB";
 		$percent = $this->input->post('percent');
 		$total = ((($this->input->post('total')/1024)/1024)/1024);
 		$total_explode = explode(".",$total);
-		$total_explode_2 = substr($total_explode[1], 0, 3);
+		@$total_explode_2 = substr($total_explode[1], 0, 3);
 		$total_to_send = $total_explode[0].".".$total_explode_2." GB";
-		
+
 		$query = $this->db->select('name, IP, email')->from("user")->get();
 
 		foreach ($query->result() as $row) :
@@ -234,7 +234,8 @@ class Site extends CI_Controller {
 					echo $this->email->print_debugger();
 				endif;
 			endforeach;
-		endforeach;	
+		endforeach;
+			
 	}
 
 	public function view_hdd_status_now() {

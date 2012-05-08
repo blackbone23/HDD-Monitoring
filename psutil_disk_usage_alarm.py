@@ -28,7 +28,7 @@ for partition in partitions :
 	c.perform()
 	c.close()
     else :
-      check_slash_home = psutil.disk_usage("/home")
+      check_slash_home = psutil.disk_usage(mount)
       if(check_slash_home.percent >= 80):
 	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	s.connect(("gmail.com",80))
