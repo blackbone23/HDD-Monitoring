@@ -16,6 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `harddisk`
+--
+
+DROP TABLE IF EXISTS `harddisk`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `harddisk` (
+  `id_harddisk` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) DEFAULT NULL,
+  `IP` varchar(45) DEFAULT NULL,
+  `username_hdd` varchar(45) DEFAULT NULL,
+  `password_hdd` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_harddisk`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `harddisk`
+--
+
+LOCK TABLES `harddisk` WRITE;
+/*!40000 ALTER TABLE `harddisk` DISABLE KEYS */;
+/*!40000 ALTER TABLE `harddisk` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `hdd_device`
 --
 
@@ -114,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-05-08 19:55:27
+-- Dump completed on 2012-05-09 20:36:59
