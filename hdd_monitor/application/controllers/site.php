@@ -256,6 +256,10 @@ class Site extends CI_Controller {
 			redirect('hdd_monitor');
 		}
 	}
+	
+	public function edit_hdd() {
+		echo "disini nanti edit hdd, table name = harddisk ";
+	}
       
 }
 

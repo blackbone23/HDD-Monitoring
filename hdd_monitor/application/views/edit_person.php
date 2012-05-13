@@ -36,6 +36,7 @@
     <?php form_close();?>
 
     <br/><br/>
+    <a href="edit_hdd">HDD settings</a>
     <a href="admin">Back to home</a>
     
 </div>
