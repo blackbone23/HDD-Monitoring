@@ -69,7 +69,7 @@
     <br/>
     <a href="view_hdd_status_now">View Your HDD Status Now</a> <br/>
     <a href="edit_person_info">Account Setting</a> <br/>
-    <a href="edit_hdd">HDD settings</a
+    <a href="show_hdd_info">HDD settings</a> <br/>
     <a href="logout">logout</a>
     
 </div>

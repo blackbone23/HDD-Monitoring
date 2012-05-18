@@ -72,5 +72,15 @@ class Modelhddmonitor extends CI_Model {
 	return $query->result();
     }
 
+    public function get_id_user_by_username() {
+	$username = $this->session->userdata('username');
+	$user = $this->db->query("select id_user from user where username = '$username'");
+	return $user->result();
+    }
+    public function show_hdd_user($id_user) {
+	$hdd_show = $this->db->query("select * from harddisk where id_user = '$id_user'");
+	return $hdd_show->result();
+    }
+
 }
 ?>

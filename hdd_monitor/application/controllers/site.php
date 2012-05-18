@@ -257,8 +257,14 @@ class Site extends CI_Controller {
 		}
 	}
 	
-	public function edit_hdd() {
-		echo "disini nanti edit hdd, table name = harddisk ";
+	public function show_hdd_info() {
+		$query_id_user = $this->modelhddmonitor->get_id_user_by_username();
+		$id_user = $query_id_user[0]->id_user;
+		$data['query_hdd_show'] = $this->modelhddmonitor->show_hdd_user($id_user);
+		$data['title'] = "Show HDD - ".$this->session->userdata('username');
+		$data['dynamiccontent'] = "view_hdd";
+		$this->load->view("templates/template",$data);
+		
 	}
       
 }
