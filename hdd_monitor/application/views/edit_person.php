@@ -13,13 +13,13 @@
     <input type="text" name="name" id="name" value="<?php echo $user->name; ?>"/>
     <br/>
     <label for="konten1">Username : </label>
-    <input type="text" name="username" id="username" value="<?php echo $user->username; ?>"/>
+    <input type="text" name="username" id="username" value="<?php echo $user->username; ?>" readonly="readonly" />
     <br/>
     <label for="konten1">New Username : </label>
     <input type="text" name="new_username" id="new_username" value=""/>
     <br/>
     <label for="konten1">Password : </label>
-    <input type="text" name="password" id="password" value="<?php echo $user->password; ?>"/>
+    <input type="text" name="password" id="password" value="<?php echo $user->password; ?>" readonly="readonly" />
     <br/>
     <label for="konten1">New Password : </label>
     <input type="text" name="new_password" id="new_password" value=""/>
@@ -36,7 +36,7 @@
     <?php form_close();?>
 
     <br/><br/>
-    <a href="edit_hdd">HDD settings</a>
+    <a href="show_hdd_info">HDD settings</a><br/>
     <a href="admin">Back to home</a>
     
 </div>

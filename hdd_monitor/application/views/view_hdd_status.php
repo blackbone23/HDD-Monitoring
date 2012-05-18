@@ -1,6 +1,6 @@
 <div id="haloo">
     <br/>
-    <h3>HDD settings for user : <?php echo $this->session->userdata('username'); ?> </h3>
+    <h3>HDD status for user : <?php echo $this->session->userdata('username'); ?> </h3>
 <?php 
 if(empty($query_hdd_show)) {
     echo "No record found"."<br/>";
@@ -22,7 +22,7 @@ if(empty($query_hdd_show)) {
 	    <td><?php echo $row->IP ?></td>
 	    <td><?php echo $row->username_hdd ?></td>
 	    <td><?php echo $row->password_hdd ?></td>
-	    <td><a href="edit_hdd_info?IP=<?php echo $row->IP ?>">Edit</a>  <a href="delete_hdd?IP=<?php echo $row->IP ?>">Delete</a></td>
+	    <td><a href="view_hdd_status?IP=<?php echo $row->IP ?>">View</a></td>
 	</tr>	
     <?php endforeach; ?>
     </table>

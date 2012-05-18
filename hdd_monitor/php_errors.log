@@ -637,3 +637,98 @@
 [06-May-2012 18:18:14] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
 [06-May-2012 18:18:14] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
 [06-May-2012 18:18:14] PHP   4. Site->view_hdd_status_now() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 15:34:21] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 309
+[18-May-2012 15:34:21] PHP Stack trace:
+[18-May-2012 15:34:21] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:34:21] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:37:02] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting T_STRING or T_VARIABLE or T_NUM_STRING in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 301
+[18-May-2012 15:37:02] PHP Stack trace:
+[18-May-2012 15:37:02] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:37:02] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:37:37] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 294
+[18-May-2012 15:37:37] PHP Stack trace:
+[18-May-2012 15:37:37] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:37:37] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:43:05] PHP Parse error:  syntax error, unexpected ')' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_hdd.php on line 32
+[18-May-2012 15:43:05] PHP Stack trace:
+[18-May-2012 15:43:05] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:43:05] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:43:05] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 15:43:05] PHP   4. Site->edit_hdd_info() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 15:43:05] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:277
+[18-May-2012 15:43:05] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:05] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[18-May-2012 15:43:05] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[18-May-2012 15:43:05] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:16] PHP Parse error:  syntax error, unexpected T_BOOLEAN_AND in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_hdd.php on line 32
+[18-May-2012 15:43:16] PHP Stack trace:
+[18-May-2012 15:43:16] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:43:16] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:43:16] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 15:43:16] PHP   4. Site->edit_hdd_info() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 15:43:16] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:277
+[18-May-2012 15:43:16] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:16] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[18-May-2012 15:43:16] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[18-May-2012 15:43:16] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:25] PHP Parse error:  syntax error, unexpected '&' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_hdd.php on line 32
+[18-May-2012 15:43:25] PHP Stack trace:
+[18-May-2012 15:43:25] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:43:25] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:43:25] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 15:43:25] PHP   4. Site->edit_hdd_info() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 15:43:25] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:277
+[18-May-2012 15:43:25] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:25] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[18-May-2012 15:43:25] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[18-May-2012 15:43:25] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:42] PHP Parse error:  syntax error, unexpected T_BOOLEAN_AND in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_hdd.php on line 32
+[18-May-2012 15:43:42] PHP Stack trace:
+[18-May-2012 15:43:42] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:43:42] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:43:42] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 15:43:42] PHP   4. Site->edit_hdd_info() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 15:43:42] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:277
+[18-May-2012 15:43:42] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:42] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[18-May-2012 15:43:42] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[18-May-2012 15:43:42] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:47] PHP Parse error:  syntax error, unexpected T_BOOLEAN_AND in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_hdd.php on line 32
+[18-May-2012 15:43:47] PHP Stack trace:
+[18-May-2012 15:43:47] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:43:47] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:43:47] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 15:43:47] PHP   4. Site->edit_hdd_info() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 15:43:47] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:277
+[18-May-2012 15:43:47] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:47] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[18-May-2012 15:43:47] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[18-May-2012 15:43:47] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:55] PHP Parse error:  syntax error, unexpected T_BOOLEAN_AND in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_hdd.php on line 32
+[18-May-2012 15:43:55] PHP Stack trace:
+[18-May-2012 15:43:55] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:43:55] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:43:55] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 15:43:55] PHP   4. Site->edit_hdd_info() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 15:43:55] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:277
+[18-May-2012 15:43:55] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:43:55] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[18-May-2012 15:43:55] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[18-May-2012 15:43:55] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[18-May-2012 15:54:29] PHP Fatal error:  Call to a member function update_hdd_settings() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 301
+[18-May-2012 15:54:29] PHP Stack trace:
+[18-May-2012 15:54:29] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 15:54:29] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 15:54:29] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 15:54:29] PHP   4. Site->edit_hdd() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 17:26:25] PHP Fatal error:  Call to a member function result() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 110
+[18-May-2012 17:26:25] PHP Stack trace:
+[18-May-2012 17:26:25] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 17:26:25] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[18-May-2012 17:26:25] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[18-May-2012 17:26:25] PHP   4. Site->view_hdd_status() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[18-May-2012 17:26:25] PHP   5. Modelhddmonitor->get_hdd_by_IP() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:255
+[18-May-2012 17:27:38] PHP Parse error:  syntax error, unexpected T_ELSE in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 270
+[18-May-2012 17:27:38] PHP Stack trace:
+[18-May-2012 17:27:38] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[18-May-2012 17:27:38] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201

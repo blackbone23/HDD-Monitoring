@@ -41,7 +41,7 @@ class Site extends CI_Controller {
 	}
 
         public function edit_account() {
-		echo "disini script untuk edit account";
+		//echo "disini script untuk edit account";
 		$new_username = $this->input->post('new_username');
 		$new_password = $this->input->post('new_password');
 		$data = array(
@@ -237,18 +237,36 @@ class Site extends CI_Controller {
 		endforeach;
 			
 	}
-
+	
 	public function view_hdd_status_now() {
+		$query_id_user = $this->modelhddmonitor->get_id_user_by_username();
+		$id_user = $query_id_user[0]->id_user;
+		$data['query_hdd_show'] = $this->modelhddmonitor->show_hdd_user_by_id_user($id_user);
+		$data['title'] = "Show HDD - ".$this->session->userdata('username');
+		$data['dynamiccontent'] = "view_hdd_status";
+		$this->load->view("templates/template",$data);
+	}
+
+	public function view_hdd_status() {
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
-			if(!$ssh = ssh2_connect('192.168.11.31', 22)){
-				echo "Couldn't connect to 192.168.11.31!";
+			parse_str($_SERVER['QUERY_STRING'], $_GET);
+			$IP = $_GET['IP'];
+			$hdd_query = $this->modelhddmonitor->get_hdd_by_IP($IP);
+			$hdd = $hdd_query[0];
+			$data['IP'] = $hdd->IP;
+			$data['username'] = $hdd->username_hdd;
+			if(!$ssh = ssh2_connect($data['IP'], 22)){
+				echo "Couldn't connect to ".$data['IP']."!";
 			} else {
-				if(!ssh2_auth_password($ssh, 'rully', 'slamdunk')) {
+				if(!ssh2_auth_password($ssh, $data['username'], $hdd->password_hdd)) {
 					echo "authentication rejected!";
 				} else {
-					$data_hdd_now = exec('/home/rully/git/HDD-Monitoring/psutil_disk_usage_json.py');
-					echo $data_hdd_now;
+					$data_hdd = exec('/home/'.$data['username'].'/git/HDD-Monitoring/psutil_disk_usage_json.py');
+					$data['data_hdd'] = json_decode($data_hdd);
+					$data['title'] = "View HDD statistic now - ".$this->session->userdata('username');
+					$data['dynamiccontent'] = "view_hdd_status_now";
+					$this->load->view("templates/template",$data);
 				}
 			}
 			
@@ -260,11 +278,76 @@ class Site extends CI_Controller {
 	public function show_hdd_info() {
 		$query_id_user = $this->modelhddmonitor->get_id_user_by_username();
 		$id_user = $query_id_user[0]->id_user;
-		$data['query_hdd_show'] = $this->modelhddmonitor->show_hdd_user($id_user);
+		$data['query_hdd_show'] = $this->modelhddmonitor->show_hdd_user_by_id_user($id_user);
 		$data['title'] = "Show HDD - ".$this->session->userdata('username');
 		$data['dynamiccontent'] = "view_hdd";
 		$this->load->view("templates/template",$data);
 		
+	}
+     	
+	public function edit_hdd_info() {
+		parse_str($_SERVER['QUERY_STRING'], $_GET);
+		$IP = $_GET['IP'];
+		$query_hdd_show = $this->modelhddmonitor->show_hdd_user_by_IP($IP);
+		$data['query_hdd_edit'] = $query_hdd_show[0];
+		$data['title'] = "Edit HDD - ".$this->session->userdata('username');
+		$data['dynamiccontent'] = "edit_hdd";
+		$this->load->view("templates/template",$data);
+	}
+
+	public function edit_hdd() {
+		$new_username = $this->input->post('new_hdd_username');
+		$new_password = $this->input->post('new_hdd_password');
+		$data = array(
+			'id_harddisk' => $this->input->post('id_harddisk'),
+			'id_user' => $this->input->post('id_user'),
+			'IP' => $this->input->post('IP'),
+			'username_hdd' => $this->input->post('username_hdd'),
+			'password_hdd' => $this->input->post('password_hdd')
+		);
+		$current_IP = $this->input->post('current_IP');
+		if (!empty($new_username) && !empty($new_password)) {
+			$data['username_hdd'] = $new_username;
+			$data['password_hdd'] = $new_password;
+		} else if (!empty($new_username)) {
+			$data['username_hdd'] = $new_username;
+		} else if (!empty($new_password)) {
+			$data['password_hdd'] = $new_password;
+		} else if($current_IP != $data['IP']){
+		} else {
+			redirect("site/edit_hdd_info?IP=".$data['IP']."&status=no_update");
+		}
+		$this->modelhddmonitor->update_hdd_settings($data);
+		redirect("site/edit_hdd_info?IP=".$data['IP']."&status=complete");
+        }
+	
+	public function delete_hdd() {
+		parse_str($_SERVER['QUERY_STRING'], $_GET);
+		$IP = $_GET['IP'];
+		$this->modelhddmonitor->delete_hdd($IP);
+		redirect("site/show_hdd_info");
+	}
+
+  	public function add_new_hdd() {
+		$query_id_user = $this->modelhddmonitor->get_id_user_by_username();
+		$data['id_user'] = $query_id_user[0]->id_user;
+		$data['title'] = "Add new HDD - ".$this->session->userdata('username');
+		$data['dynamiccontent'] = "add_new_hdd";
+		$this->load->view("templates/template",$data);
+	}
+
+	public function add_hdd() {
+		$data = array(
+			'id_user' => $this->input->post('id_user'),
+			'IP' => $this->input->post('IP'),
+			'username_hdd' => $this->input->post('username_hdd'),
+			'password_hdd' => $this->input->post('password_hdd')
+		);
+		if(empty($data['IP'])) {redirect("site/add_new_hdd?status=no_IP");}
+		elseif(empty($data['username_hdd'])) {redirect("site/add_new_hdd?status=no_username");}
+		elseif(empty($data['password_hdd'])) {redirect("site/add_new_hdd?status=no_password");}
+		$this->modelhddmonitor->add_hdd($data);
+		redirect("site/add_new_hdd?status=complete");
 	}
       
 }

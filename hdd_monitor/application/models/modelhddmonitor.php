@@ -77,9 +77,37 @@ class Modelhddmonitor extends CI_Model {
 	$user = $this->db->query("select id_user from user where username = '$username'");
 	return $user->result();
     }
-    public function show_hdd_user($id_user) {
+    public function show_hdd_user_by_id_user($id_user) {
 	$hdd_show = $this->db->query("select * from harddisk where id_user = '$id_user'");
 	return $hdd_show->result();
+    }
+    
+    public function show_hdd_user_by_IP($IP) {
+	$hdd_show = $this->db->query("select * from harddisk where IP = '$IP'");
+	return $hdd_show->result();
+    }
+
+    public function update_hdd_settings($data) {
+	$username = $data['username'];
+       	$this->db->where('id_harddisk',$data['id_harddisk']);
+        $this->db->update('harddisk',$data);
+    	return ;
+    }
+
+    public function delete_hdd($data) {
+	$this->db->where('IP',$data);
+    	$this->db->delete('harddisk');
+    	return ;
+    }
+
+    public function add_hdd($data) {
+	$hasil = $this->db->insert('harddisk',$data);
+        return;
+    }
+
+    public function get_hdd_by_IP($data) {
+	$hdd = $this->db->query("select * from harddisk where IP = '$data'");
+	return $hdd->result();
     }
 
 }
