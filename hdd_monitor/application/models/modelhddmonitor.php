@@ -67,11 +67,16 @@ class Modelhddmonitor extends CI_Model {
 	$id_user = $id_user_query[0]->id_user;
 	$user_query = $this->db->query("select * from user as a, harddisk as b where b.id_user=a.id_user & a.id_user='$id_user'");
 	$user = $user_query->result();
-	foreach($user as $row) {
-		$IP_arr[] = $row->IP;
+	if(!empty($user)) {
+	    foreach($user as $row) {
+	   	$IP_arr[] = $row->IP;
+	    }
+	    $sql = $this->db->select("IP")->distinct()->from('hdd_device')->where_in('IP', $IP_arr)->get();
+	    $query = $sql->result();
+	} else {
+	    $query = "no_query";
 	}
-	$query = $this->db->select("IP")->distinct()->from('hdd_device')->where_in('IP', $IP_arr)->get();
-	return $query->result();
+	return $query;
     }
 
     public function get_id_user_by_username() {

@@ -4,7 +4,9 @@
 	echo "Username anda : $username";
     ?>
     <h3>Checking Partition for : <?php echo $username ?></h3>
-    
+    <?php
+    if($query != "no_query") {
+    ?>
     <table border='1' cellspacing='0' cellpadding='5'>
         <tr>
 	    <th>IP</th>
@@ -14,7 +16,7 @@
         </tr>
 	
     <?php 
-    if(isset($query)) {
+    
 	foreach ($query as $row) : 
 		$IP=$row->IP;
 
@@ -91,7 +93,7 @@
     <a href="view_hdd_status_now">View Your HDD Status Now</a> <br/>
     <a href="edit_person_info">Account Setting</a> <br/>
     <a href="show_hdd_info">HDD settings</a> <br/>
-    <?php if($user_type == "administrator") {?><a href="user">User</a><br/><?php } ?>
+    <?php if($user_type == "1") {?><a href="user">User</a><br/><?php } ?>
     <a href="logout">logout</a>
     
 </div>

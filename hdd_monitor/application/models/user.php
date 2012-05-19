@@ -34,6 +34,11 @@ class User extends CI_Model {
         $this->session->set_userdata($session);
     	return ;
     }
+
+    public function get_all_user() {
+	$query = $this->db->query("select * from user");
+	return $query->result();
+    }
 }
 
 ?>

@@ -14,13 +14,22 @@ class Site extends CI_Controller {
 			$data['title'] = "Welcome - $username";
 			$query_user_type = $this->modelhddmonitor->get_user_type();
 			$data['user_type'] = $query_user_type[0]->user_type;
-			$query = $this->modelhddmonitor->view_device();
-			$data['query'] = $query;
+			$data['query'] = $this->modelhddmonitor->view_device();
 			$this->load->view('templates/template',$data);
 		} else {
 			redirect('hdd_monitor');
 		}
         }
+	
+	public function user() {
+		$this->load->model("user");
+		$data['title'] = "User settings HDD - ".$this->session->userdata('username');
+		$data['dynamiccontent'] = "view_user";
+		$query_user_type = $this->modelhddmonitor->get_user_type();
+		$data['user_type'] = $query_user_type[0]->user_type;
+		$data['user_all'] = $this->user->get_all_user();
+		$this->load->view("templates/template",$data);
+	}
 
 	public function logout() {
 		$this->session->unset_userdata('username');
@@ -350,6 +359,7 @@ class Site extends CI_Controller {
 		$this->modelhddmonitor->add_hdd($data);
 		redirect("site/add_new_hdd?status=complete");
 	}
+
       
 }
 
