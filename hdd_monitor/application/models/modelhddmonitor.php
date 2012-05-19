@@ -63,11 +63,13 @@ class Modelhddmonitor extends CI_Model {
 
     public function view_device() {
         $username = $this->session->userdata('username');
-        $user = $this->db->query("select * from user where username = '$username'");
-        $user_result =  $user->result();
-	$spesific_user = $user_result[0];
-	$range_IP = $spesific_user->IP;
-	$IP_arr = explode(", ",$range_IP);
+	$id_user_query = $this->modelhddmonitor->get_id_user_by_username();
+	$id_user = $id_user_query[0]->id_user;
+	$user_query = $this->db->query("select * from user as a, harddisk as b where b.id_user=a.id_user & a.id_user='$id_user'");
+	$user = $user_query->result();
+	foreach($user as $row) {
+		$IP_arr[] = $row->IP;
+	}
 	$query = $this->db->select("IP")->distinct()->from('hdd_device')->where_in('IP', $IP_arr)->get();
 	return $query->result();
     }
@@ -108,6 +110,12 @@ class Modelhddmonitor extends CI_Model {
     public function get_hdd_by_IP($data) {
 	$hdd = $this->db->query("select * from harddisk where IP = '$data'");
 	return $hdd->result();
+    }
+
+    public function get_user_type(){
+	$username = $this->session->userdata('username');
+	$query = $this->db->query("select user_type from user where username = '$username'");
+	return $query->result();
     }
 
 }

@@ -732,3 +732,41 @@
 [18-May-2012 17:27:38] PHP Stack trace:
 [18-May-2012 17:27:38] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
 [18-May-2012 17:27:38] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-May-2012 12:46:07] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 68
+[19-May-2012 12:46:07] PHP Stack trace:
+[19-May-2012 12:46:07] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-May-2012 12:46:07] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-May-2012 12:46:07] PHP   3. Site->__construct() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:288
+[19-May-2012 12:46:07] PHP   4. CI_Loader->model() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:7
+[19-May-2012 14:00:09] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting '(' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/admin.php on line 67
+[19-May-2012 14:00:09] PHP Stack trace:
+[19-May-2012 14:00:09] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-May-2012 14:00:09] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-May-2012 14:00:09] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[19-May-2012 14:00:09] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[19-May-2012 14:00:09] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:17
+[19-May-2012 14:00:09] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-May-2012 14:00:09] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[19-May-2012 14:00:09] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[19-May-2012 14:00:09] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-May-2012 15:15:47] PHP Fatal error:  Call to a member function get() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 73
+[19-May-2012 15:15:47] PHP Stack trace:
+[19-May-2012 15:15:47] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-May-2012 15:15:47] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-May-2012 15:15:47] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[19-May-2012 15:15:47] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[19-May-2012 15:15:47] PHP   5. Modelhddmonitor->view_device() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:17
+[19-May-2012 15:19:01] PHP Fatal error:  Call to a member function get() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 73
+[19-May-2012 15:19:01] PHP Stack trace:
+[19-May-2012 15:19:01] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-May-2012 15:19:01] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-May-2012 15:19:01] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[19-May-2012 15:19:01] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[19-May-2012 15:19:01] PHP   5. Modelhddmonitor->view_device() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:17
+[19-May-2012 15:19:16] PHP Fatal error:  Call to a member function get() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/modelhddmonitor.php on line 73
+[19-May-2012 15:19:16] PHP Stack trace:
+[19-May-2012 15:19:16] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-May-2012 15:19:16] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-May-2012 15:19:16] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[19-May-2012 15:19:16] PHP   4. Site->admin() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[19-May-2012 15:19:16] PHP   5. Modelhddmonitor->view_device() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:17

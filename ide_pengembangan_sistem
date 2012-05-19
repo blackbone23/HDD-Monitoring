@@ -3,6 +3,7 @@
 3. Untuk halaman admin, tampilkan hanya IP saja. 1 IP = 1 HDD, untuk partisi gunakan lagi query tambahan untuk membuat dropdown select untuk pilihan view statistic dari partisi tersebut.
 4. data user tambahkan user linux dan password linux.
 5. halaman sysadmin untuk update data user / buat seperti halaman admin biasa, namun ada perbedaan.. lihat permission adminnya zoneminder :D 
+6. setelah login, jangan langsung dihadapkan ke halaman view harddisk, cek dulu apakah dia memiliki harddisk apa tidak.. krn jika tidak, akan terjadi bug
 
 solve : 
 
