@@ -24,12 +24,12 @@ DROP TABLE IF EXISTS `harddisk`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `harddisk` (
   `id_harddisk` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(45) DEFAULT NULL,
+  `id_user` int(11) NOT NULL,
   `IP` varchar(45) DEFAULT NULL,
   `username_hdd` varchar(45) DEFAULT NULL,
   `password_hdd` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_harddisk`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `harddisk` (
 
 LOCK TABLES `harddisk` WRITE;
 /*!40000 ALTER TABLE `harddisk` DISABLE KEYS */;
+INSERT INTO `harddisk` VALUES (2,1,'192.168.11.31','rully','slamdunk'),(3,1,'192.168.11.32','rully','tr4c3r');
 /*!40000 ALTER TABLE `harddisk` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,8 +116,8 @@ CREATE TABLE `user` (
   `name` varchar(45) DEFAULT NULL,
   `username` varchar(200) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `IP` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
+  `user_type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -127,7 +128,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Rully','rully','rully','192.168.11.31, 192.168.11.32','rully.lukman@gmail.com'),(2,'Ryan','ryan ','ryan',NULL,NULL);
+INSERT INTO `user` VALUES (1,'Rully','rully','rully','rully.lukman@gmail.com','2'),(2,'Ryan','ryan ','ryan',NULL,'2'),(3,'Sysadmin','sysadmin','admin123','','1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -140,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-05-09 20:36:59
+-- Dump completed on 2012-05-19 17:11:05
