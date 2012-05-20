@@ -10,6 +10,7 @@
 	    <th>Username</th>
 	    <th>Password</th>
 	    <th>User Authentication</th>
+	    <th>Action</th>
         </tr>
 	
     <?php 
@@ -33,6 +34,9 @@
 	    </td>
 	    <td>
 		<input type="radio" name="user_type['<?php echo $row->username ?>']" id="user_type" value="administrator" <?php if($row->user_type == "1") {echo 'checked="checked"';} ?> /> Administrator <input type="radio" name="user_type['<?php echo $row->username ?>']" id="user_type" value="user" <?php if($row->user_type == "2") {echo 'checked="checked"';} ?> /> User
+	    </td>
+	    <td>
+		<input type="button" value="save" /> <input type="button" value="delete" />
 	    </td>
 	</tr>
 	

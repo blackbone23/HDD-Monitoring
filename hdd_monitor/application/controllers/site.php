@@ -22,13 +22,30 @@ class Site extends CI_Controller {
         }
 	
 	public function user() {
-		$this->load->model("user");
-		$data['title'] = "User settings HDD - ".$this->session->userdata('username');
-		$data['dynamiccontent'] = "view_user";
-		$query_user_type = $this->modelhddmonitor->get_user_type();
-		$data['user_type'] = $query_user_type[0]->user_type;
-		$data['user_all'] = $this->user->get_all_user();
-		$this->load->view("templates/template",$data);
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$this->load->model("user");
+			$data['title'] = "User settings HDD - ".$this->session->userdata('username');
+			$data['dynamiccontent'] = "view_user";
+			$query_user_type = $this->modelhddmonitor->get_user_type();
+			$data['user_type'] = $query_user_type[0]->user_type;
+			$data['user_all'] = $this->user->get_all_user();
+			$this->load->view("templates/template",$data);
+		} else {
+			redirect('hdd_monitor');
+		}
+	}
+
+	public function edit_user() {
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			if(isset($save)){
+				$id_user = $this->input->post('id_user');
+				var_dump($id_user);
+			}
+		} else {
+			redirect('hdd_monitor');
+		}
 	}
 
 	public function logout() {
