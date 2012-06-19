@@ -1,10 +1,10 @@
 <div id="title">HDD Monitoring</div>
 
 <div id="linkGroup">
-    <div class="link"><a href="index.html">Home</a></div>
+   <!-- <div class="link"><a href="index.html">Home</a></div>
     <div class="link"><a href="index.html">About</a></div>
     <div class="link"><a href="index.html">Portfolio</a></div>
-    <div class="link"><a href="index.html">Contact</a></div>
+    <div class="link"><a href="index.html">Contact</a></div> -->
 </div>
 
 <div id="blueBox"> 

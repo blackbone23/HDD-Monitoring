@@ -76,7 +76,6 @@ class Site extends CI_Controller {
 			'name' => $this->input->post('name'),
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'),
-			'IP' => $this->input->post('IP'),
 			'email' => $this->input->post('email')
 		);
 

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://rully.tr4c3r.dev/HDD-Monitoring/hdd_monitor/';
+$config['base_url']	= 'http://ryan.pakar/HDD-Monitoring/hdd_monitor/';
 
 /*
 |--------------------------------------------------------------------------
