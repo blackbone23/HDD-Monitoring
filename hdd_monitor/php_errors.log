@@ -831,3 +831,36 @@
 [19-May-2012 16:37:24] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
 [19-May-2012 16:37:24] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
 [19-May-2012 16:37:24] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-Jun-2012 20:57:02] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ',' or ';' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_hdd_status_now.php on line 30
+[19-Jun-2012 20:57:02] PHP Stack trace:
+[19-Jun-2012 20:57:02] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-Jun-2012 20:57:02] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-Jun-2012 20:57:02] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[19-Jun-2012 20:57:02] PHP   4. Site->view_hdd_status() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[19-Jun-2012 20:57:02] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:295
+[19-Jun-2012 20:57:02] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-Jun-2012 20:57:02] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[19-Jun-2012 20:57:02] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[19-Jun-2012 20:57:02] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-Jun-2012 20:57:14] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ',' or ';' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_hdd_status_now.php on line 30
+[19-Jun-2012 20:57:14] PHP Stack trace:
+[19-Jun-2012 20:57:14] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-Jun-2012 20:57:14] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-Jun-2012 20:57:14] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[19-Jun-2012 20:57:14] PHP   4. Site->view_hdd_status() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[19-Jun-2012 20:57:14] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:295
+[19-Jun-2012 20:57:14] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-Jun-2012 20:57:14] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[19-Jun-2012 20:57:14] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[19-Jun-2012 20:57:14] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-Jun-2012 20:57:44] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ',' or ';' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_hdd_status_now.php on line 30
+[19-Jun-2012 20:57:44] PHP Stack trace:
+[19-Jun-2012 20:57:44] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[19-Jun-2012 20:57:44] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[19-Jun-2012 20:57:44] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[19-Jun-2012 20:57:44] PHP   4. Site->view_hdd_status() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[19-Jun-2012 20:57:44] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:295
+[19-Jun-2012 20:57:44] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[19-Jun-2012 20:57:44] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[19-Jun-2012 20:57:44] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[19-Jun-2012 20:57:44] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308

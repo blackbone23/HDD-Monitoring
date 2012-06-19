@@ -1,10 +1,13 @@
 <div id="title">HDD Monitoring</div>
 
 <div id="linkGroup">
+    <?php if($user_type == "1") {?>
+    <div class="link"><a href="user">User</a><br/></div>
+    <?php } else { ?>
     <div class="link"><a href="view_hdd_status_now">HDD Status</a></div>
     <div class="link"><a href="edit_person_info">Account</a></div>
     <div class="link"><a href="show_hdd_info">HDD settings</a></div>
-    <?php if($user_type == "1") {?><div class="link"><a href="user">User</a><br/></div><?php } ?>
+    <?php } ?>
     <div class="link"><a href="logout">logout</a></div>
 </div>
 
