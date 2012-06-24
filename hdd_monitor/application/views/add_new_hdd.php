@@ -19,10 +19,11 @@
 	    <?php
 	    parse_str($_SERVER['QUERY_STRING'], $_GET);
 	    if(isset($_GET['status'])){
-		if($_GET['status'] == "complete") {echo "<div class='update_alert'>Update Successed!</div>";}
-		elseif($_GET['status'] == "no_IP") {echo "<div class='update_alert'>Please Insert IP!</div>";}
-		elseif($_GET['status'] == "no_username") {echo "<div class='update_alert'>Please Insert Username!</div>";}
-		elseif($_GET['status'] == "no_password") {echo "<div class='update_alert'>Please Insert Password!</div>";}
+		if($_GET['status'] == "complete") {echo "<div class='update_alert' style='color:green; font-weight:bold;'>Update Successed!</div>";}
+		elseif($_GET['status'] == "no_IP") {echo "<div class='update_alert' style='color:red; font-weight:bold;'>Please Insert IP!</div>";}
+		elseif($_GET['status'] == "no_username") {echo "<div class='update_alert' style='color:red; font-weight:bold;'>Please Insert Username!</div>";}
+		elseif($_GET['status'] == "no_password") {echo "<div class='update_alert' style='color:red; font-weight:bold;'>Please Insert Password!</div>";}
+		elseif($_GET['status'] == "duplicate_IP") {echo "<div class='update_alert' style='color:red; font-weight:bold;'>Duplicate IP!</div>";}
 	    }
 	    ?>
 	    <br/><br/>

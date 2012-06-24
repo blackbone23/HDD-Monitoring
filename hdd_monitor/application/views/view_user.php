@@ -2,6 +2,7 @@
 
 <div id="linkGroup">
     <div class="link"><a href="user">User</a><br/></div>
+    <div class="link"><a href="add_user">Add User</a></div>
     <div class="link"><a href="logout">logout</a></div>
 </div>
 
@@ -14,7 +15,6 @@
 		$username = $this->session->userdata('username');
 	    ?>
 	    <h3>User Settings </h3>
-	    <form action='edit_user'>
 	    <table border='1' cellspacing='0' cellpadding='5'>
 		<tr>
 		    <th>Name</th>
@@ -29,25 +29,22 @@
 		foreach ($user_all as $row) : 
 
 	    ?>
-	
 		<tr>
 		    <td>
 			<?php echo $row->name ?>
-			<input type="hidden" name="name" id="name" value="<?php echo $row->name ?>" />
 		    </td>
 		    <td>
 			<?php echo $row->username ?>
-			<input type="hidden" name="username" id="username" value="<?php echo $row->username ?>" />
 		    </td>
 		    <td>
 		   	<?php echo $row->password ?>
-			<input type="hidden" name="password" id="password" value="<?php echo $row->password ?>" />
 		    </td>
 		    <td>
-			<input type="radio" name="user_type['<?php echo $row->username ?>']" id="user_type" value="administrator" <?php if($row->user_type == "1") {echo 'checked="checked"';} ?> /> Administrator <input type="radio" name="user_type['<?php echo $row->username ?>']" id="user_type" value="user" <?php if($row->user_type == "2") {echo 'checked="checked"';} ?> /> User
+			<?php echo ($row->user_type == '1') ? "Administrator" : "User";  ?>
+			
 		    </td>
 		    <td>
-			<input type="button" value="save" /> <input type="button" value="delete" />
+			<input type="submit" value="edit" onClick="window.location='edit_user_type?id_user=<?php echo $row->id_user ?>'" /> <input type="button" value="delete" onClick="window.location='delete_user?id_user=<?php echo $row->id_user ?>'" />
 		    </td>
 		</tr>
 	
@@ -59,9 +56,9 @@
 	    
 	    <br/>
 	    <div id="bottom_nav">
-		<input type="button" value="Back" onClick="window.history.back()">
+		<?php if(isset($_GET['status']) && $_GET['status'] == "complete") { echo"<div style='color:green; font-weight:bold;'>User berhasil di delete</div>"; } ?>
+		
 	    </div>
-	    </form>
-	    
+	    <br/><br/>
 	</div>
 </div>

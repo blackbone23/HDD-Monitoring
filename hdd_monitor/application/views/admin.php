@@ -3,6 +3,7 @@
 <div id="linkGroup">
     <?php if($user_type == "1") {?>
     <div class="link"><a href="user">User</a><br/></div>
+    <div class="link"><a href="add_user">Add User</a></div>
     <?php } else { ?>
     <div class="link"><a href="view_hdd_status_now">HDD Status</a></div>
     <div class="link"><a href="edit_person_info">Account</a></div>

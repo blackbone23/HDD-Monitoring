@@ -36,6 +36,8 @@
 		    <td style="padding:10px;"><label>Total Space :</label></td><td style="padding:10px;"><?php echo ((($row->total)/1024)/1024)/1024; echo " GB"; ?></td>
 		</tr>
 	    </table>
+
+
 	<?php endforeach; ?> 
 	    <br /> <br />
 	    <a href="view_hdd_status_now">back</a> <br/>

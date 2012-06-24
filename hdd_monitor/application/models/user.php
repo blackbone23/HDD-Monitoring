@@ -39,6 +39,24 @@ class User extends CI_Model {
 	$query = $this->db->query("select * from user");
 	return $query->result();
     }
+    
+    public function update_user_type($data) {
+	$username = $data['username'];
+       	$this->db->where('id_user',$data['id_user']);
+        $this->db->update('user',$data);
+    	return ;
+    }
+
+    public function get_hdd_data_from_id_user($data) {
+	$query = $this->db->query("select * from harddisk where id_user = '$data'");
+        return $query->result();
+    }
+
+    public function delete_user($data){
+	$query = $this->db->query("delete from user where id_user = '$data'");
+        return;
+    }
+
 }
 
 ?>

@@ -36,17 +36,6 @@ class Site extends CI_Controller {
 		}
 	}
 
-	public function edit_user() {
-		$username = $this->session->userdata('username');
-		if (!empty($username)) {
-			if(isset($save)){
-				$id_user = $this->input->post('id_user');
-				var_dump($id_user);
-			}
-		} else {
-			redirect('hdd_monitor');
-		}
-	}
 
 	public function logout() {
 		$this->session->unset_userdata('username');
@@ -243,12 +232,12 @@ class Site extends CI_Controller {
 		@$total_explode_2 = substr($total_explode[1], 0, 3);
 		$total_to_send = $total_explode[0].".".$total_explode_2." GB";
 
-		$query = $this->db->select('name, IP, email')->from("user")->get();
-
-		foreach ($query->result() as $row) :
-			$list_IP = explode(", ", $row->IP);
-			foreach ($list_IP as $IP_check) :
-				if($IP_check == $IP) :
+		$query = $this->db->query('select * from user as a, harddisk as b where a.id_user = b.id_user');
+		
+		foreach ($query->result() as $row) : 
+			$list_IP = $row->IP;
+			
+				if($list_IP == $IP) :
 					$row->email;
 					$this->email->from('rully.lukman@gmail.com', 'Administrator');
 					$this->email->to($row->email);
@@ -259,7 +248,7 @@ class Site extends CI_Controller {
 					$this->email->send();
 					echo $this->email->print_debugger();
 				endif;
-			endforeach;
+			
 		endforeach;
 			
 	}
@@ -274,6 +263,9 @@ class Site extends CI_Controller {
 	}
 
 	public function view_hdd_status() {
+		$this->load->helper('file');
+		$this->load->library('email');
+		$this->load->model('user');
 		$username = $this->session->userdata('username');
 		if (!empty($username)) {
 			parse_str($_SERVER['QUERY_STRING'], $_GET);
@@ -292,6 +284,22 @@ class Site extends CI_Controller {
 					$data['data_hdd'] = json_decode($data_hdd);
 					$data['title'] = "View HDD statistic now - ".$this->session->userdata('username');
 					$data['dynamiccontent'] = "view_hdd_status_now";
+					$row = $data['data_hdd'][0];
+					$user_data = $this->user->get_user();
+					$used = ((($row->used)/1024)/1024)/1024;
+					$free = ((($row->free)/1024)/1024)/1024;
+					$total = ((($row->total)/1024)/1024)/1024;
+					$message= "Hello $username,\n\nHere's result for your hard disk statistic from our HDD Checker :\n\nIP : $IP\nPartition : $row->device\nFiletype : $row->filetype\nMount on : $row->mount_on\nUsed : $used GB\nFree : $free\nTotal : $total\nPercent used : $row->percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
+
+					$this->email->from('rully.lukman@gmail.com', 'Administrator');
+					$this->email->to($user_data[0]->email);
+
+					$this->email->subject('Statistic for your harddisk now');
+					$this->email->message($message);
+
+					$this->email->send();
+					//echo $this->email->print_debugger();
+
 					$this->load->view("templates/template",$data);
 				}
 			}
@@ -355,11 +363,16 @@ class Site extends CI_Controller {
 	}
 
   	public function add_new_hdd() {
-		$query_id_user = $this->modelhddmonitor->get_id_user_by_username();
-		$data['id_user'] = $query_id_user[0]->id_user;
-		$data['title'] = "Add new HDD - ".$this->session->userdata('username');
-		$data['dynamiccontent'] = "add_new_hdd";
-		$this->load->view("templates/template",$data);
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$query_id_user = $this->modelhddmonitor->get_id_user_by_username();
+			$data['id_user'] = $query_id_user[0]->id_user;
+			$data['title'] = "Add new HDD - ".$this->session->userdata('username');
+			$data['dynamiccontent'] = "add_new_hdd";
+			$this->load->view("templates/template",$data);
+		} else {
+			redirect('hdd_monitor');
+		}
 	}
 
 	public function add_hdd() {
@@ -369,13 +382,95 @@ class Site extends CI_Controller {
 			'username_hdd' => $this->input->post('username_hdd'),
 			'password_hdd' => $this->input->post('password_hdd')
 		);
+		$IP_list = $this->modelhddmonitor->get_IP_hdd();
 		if(empty($data['IP'])) {redirect("site/add_new_hdd?status=no_IP");}
 		elseif(empty($data['username_hdd'])) {redirect("site/add_new_hdd?status=no_username");}
 		elseif(empty($data['password_hdd'])) {redirect("site/add_new_hdd?status=no_password");}
+		foreach($IP_list as $row) { 
+			if($row->IP == $data['IP']) { echo "duplikat IP";
+				redirect("site/add_new_hdd?status=duplicate_IP");
+			}
+		}
 		$this->modelhddmonitor->add_hdd($data);
 		redirect("site/add_new_hdd?status=complete");
 	}
+	
+	public function add_user() {
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$data['title'] = "Add new user";
+			$data['dynamiccontent'] = "add_new_user";
+			$this->load->view("templates/template",$data);
+		} else {
+			redirect('hdd_monitor');
+		}
+		
+	}
 
-      
+	public function add_account() {
+		$this->load->model('user');
+		$data = array(
+			'name' => $this->input->post('name'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'email' => $this->input->post('email'),
+			'user_type' => '2'
+		);
+		$new_user = $this->input->post('username');
+		if(empty($data['username']) && empty($data['password'])) {redirect("site/add_user?status=not_complete");}
+		$user = $this->user->get_all_user();
+		foreach($user as $row) {
+			if($row->username == $data['username']) {
+				redirect("site/add_user?status=duplicate&user=$new_user");
+			}
+		}
+		$this->modelhddmonitor->add_new_user($data);
+		redirect("site/add_user?status=complete&user=$new_user");
+	}
+
+	public function edit_user_type() {
+		$data['title'] = "Edit user type";
+		$data['dynamiccontent'] = "edit_user_type";
+		if(isset($_GET['id_user'])) {@$id_user = $_GET['id_user'];}
+		$data['user'] = $this->modelhddmonitor->get_user_by_id($id_user);
+		$this->load->view("templates/template",$data);
+		
+	}
+
+	public function edit_user_type_proc() {
+		$new_username = $this->input->post('new_username');
+		$new_password = $this->input->post('new_password');
+      		$data = array(
+			'id_user' => $this->input->post('id_user'),
+			'name' => $this->input->post('name'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+			'email' => $this->input->post('email'),
+			'user_type' => $this->input->post('user_type')
+		);
+		if (!empty($new_username) && !empty($new_password)) {
+			$data['username'] = $new_username;
+			$data['password'] = $new_password;
+		} else if (!empty($new_username)) {
+			$data['username'] = $new_username;
+		} else if (!empty($new_password)) {
+			$data['password'] = $new_password;
+		} else {
+			
+		}
+		if($data['user_type'] == 'user') {$data['user_type'] = "2";}
+		else {$data['user_type'] = "1";}
+		var_dump($data);
+		$this->load->model('user');
+		$this->user->update_user_type($data);
+		redirect("site/edit_user_type?id_user=".$data['id_user']."&status=complete");
+	}
+
+	public function delete_user() {
+		$this->load->model('user');
+		$id_user = $_GET['id_user'];
+		$this->user->delete_user($id_user);
+		redirect("site/user?status=complete");
+        }
 }
 

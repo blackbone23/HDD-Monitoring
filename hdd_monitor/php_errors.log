@@ -864,3 +864,134 @@
 [19-Jun-2012 20:57:44] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
 [19-Jun-2012 20:57:44] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
 [19-Jun-2012 20:57:44] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 14:35:15] PHP Fatal error:  Cannot redeclare Site::edit_user() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 405
+[24-Jun-2012 14:35:15] PHP Stack trace:
+[24-Jun-2012 14:35:15] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 14:35:15] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 14:35:48] PHP Fatal error:  Cannot redeclare Site::edit_user() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 405
+[24-Jun-2012 14:35:48] PHP Stack trace:
+[24-Jun-2012 14:35:48] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 14:35:48] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 14:35:58] PHP Fatal error:  Cannot redeclare Site::edit_user() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 405
+[24-Jun-2012 14:35:58] PHP Stack trace:
+[24-Jun-2012 14:35:58] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 14:35:58] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 14:36:05] PHP Fatal error:  Cannot redeclare Site::edit_user() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 405
+[24-Jun-2012 14:36:05] PHP Stack trace:
+[24-Jun-2012 14:36:05] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 14:36:05] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 14:36:30] PHP Fatal error:  Cannot redeclare Site::edit_user() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 405
+[24-Jun-2012 14:36:30] PHP Stack trace:
+[24-Jun-2012 14:36:30] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 14:36:30] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 14:47:34] PHP Fatal error:  Call to undefined function get_user_by_id() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 398
+[24-Jun-2012 14:47:34] PHP Stack trace:
+[24-Jun-2012 14:47:34] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 14:47:34] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 14:47:34] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 14:47:34] PHP   4. Site->edit_user_type() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 15:25:59] PHP Fatal error:  Cannot use object of type stdClass as array in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_user_type.php on line 17
+[24-Jun-2012 15:25:59] PHP Stack trace:
+[24-Jun-2012 15:25:59] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 15:25:59] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 15:25:59] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 15:25:59] PHP   4. Site->edit_user_type() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 15:25:59] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:399
+[24-Jun-2012 15:25:59] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:25:59] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:25:59] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[24-Jun-2012 15:25:59] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:25:59] PHP  10. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:26:11] PHP Fatal error:  Cannot use object of type stdClass as array in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/edit_user_type.php on line 17
+[24-Jun-2012 15:26:11] PHP Stack trace:
+[24-Jun-2012 15:26:11] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 15:26:11] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 15:26:11] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 15:26:11] PHP   4. Site->edit_user_type() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 15:26:11] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:399
+[24-Jun-2012 15:26:11] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:26:11] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:26:11] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[24-Jun-2012 15:26:11] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:26:11] PHP  10. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:30:05] PHP Parse error:  syntax error, unexpected '}' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 425
+[24-Jun-2012 15:30:05] PHP Stack trace:
+[24-Jun-2012 15:30:05] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 15:30:05] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 15:39:10] PHP Fatal error:  Call to a member function from() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_hdd_status_now.php on line 63
+[24-Jun-2012 15:39:10] PHP Stack trace:
+[24-Jun-2012 15:39:10] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 15:39:10] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 15:39:10] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 15:39:10] PHP   4. Site->view_hdd_status() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 15:39:10] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:284
+[24-Jun-2012 15:39:10] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:39:10] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:39:10] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[24-Jun-2012 15:39:10] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:39:10] PHP  10. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:39:59] PHP Fatal error:  Call to a member function from() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_hdd_status_now.php on line 62
+[24-Jun-2012 15:39:59] PHP Stack trace:
+[24-Jun-2012 15:39:59] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 15:39:59] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 15:39:59] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 15:39:59] PHP   4. Site->view_hdd_status() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 15:39:59] PHP   5. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:284
+[24-Jun-2012 15:39:59] PHP   6. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:39:59] PHP   7. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:39:59] PHP   8. CI_Loader->view() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/templates/template.php:7
+[24-Jun-2012 15:39:59] PHP   9. CI_Loader->_ci_load() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:308
+[24-Jun-2012 15:39:59] PHP  10. include() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/Loader.php:683
+[24-Jun-2012 15:48:09] PHP Parse error:  syntax error, unexpected '"' in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 287
+[24-Jun-2012 15:48:09] PHP Stack trace:
+[24-Jun-2012 15:48:09] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 15:48:09] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 15:55:07] PHP Fatal error:  Call to undefined method Modelhddmonitor::get_user() in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 289
+[24-Jun-2012 15:55:07] PHP Stack trace:
+[24-Jun-2012 15:55:07] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 15:55:07] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 15:55:07] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 15:55:07] PHP   4. Site->view_hdd_status() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 16:01:23] PHP Fatal error:  Call to a member function result() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 240
+[24-Jun-2012 16:01:23] PHP Stack trace:
+[24-Jun-2012 16:01:23] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:01:23] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 16:01:23] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 16:01:23] PHP   4. Site->add_disk_alert() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 16:05:07] PHP Fatal error:  Call to a member function result() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 241
+[24-Jun-2012 16:05:07] PHP Stack trace:
+[24-Jun-2012 16:05:07] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:05:07] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 16:05:07] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 16:05:07] PHP   4. Site->add_disk_alert() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 16:52:02] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 239
+[24-Jun-2012 16:52:02] PHP Stack trace:
+[24-Jun-2012 16:52:02] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:52:02] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 16:52:34] PHP Parse error:  syntax error, unexpected T_IF in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 239
+[24-Jun-2012 16:52:34] PHP Stack trace:
+[24-Jun-2012 16:52:34] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:52:34] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 16:53:01] PHP Parse error:  syntax error, unexpected T_IF in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 239
+[24-Jun-2012 16:53:01] PHP Stack trace:
+[24-Jun-2012 16:53:01] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:53:01] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 16:53:07] PHP Parse error:  syntax error, unexpected T_IF in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 239
+[24-Jun-2012 16:53:07] PHP Stack trace:
+[24-Jun-2012 16:53:07] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:53:07] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 16:53:59] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 239
+[24-Jun-2012 16:53:59] PHP Stack trace:
+[24-Jun-2012 16:53:59] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:53:59] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 16:54:01] PHP Parse error:  syntax error, unexpected T_FOREACH in /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php on line 239
+[24-Jun-2012 16:54:01] PHP Stack trace:
+[24-Jun-2012 16:54:01] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 16:54:01] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 17:36:59] PHP Fatal error:  Call to a member function result() on a non-object in /home/rully/git/HDD-Monitoring/hdd_monitor/application/models/user.php on line 57
+[24-Jun-2012 17:36:59] PHP Stack trace:
+[24-Jun-2012 17:36:59] PHP   1. {main}() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:0
+[24-Jun-2012 17:36:59] PHP   2. require_once() /home/rully/git/HDD-Monitoring/hdd_monitor/index.php:201
+[24-Jun-2012 17:36:59] PHP   3. call_user_func_array() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:339
+[24-Jun-2012 17:36:59] PHP   4. Site->delete_user() /home/rully/git/HDD-Monitoring/hdd_monitor/system/core/CodeIgniter.php:0
+[24-Jun-2012 17:36:59] PHP   5. User->delete_user() /home/rully/git/HDD-Monitoring/hdd_monitor/application/controllers/site.php:472

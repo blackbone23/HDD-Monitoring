@@ -117,11 +117,25 @@ class Modelhddmonitor extends CI_Model {
 	return $hdd->result();
     }
 
-    public function get_user_type(){
+    public function get_user_type() {
 	$username = $this->session->userdata('username');
 	$query = $this->db->query("select user_type from user where username = '$username'");
 	return $query->result();
     }
 
+    public function add_new_user($data) {
+	$hasil = $this->db->insert('user',$data);
+        return;
+    }
+    
+    public function get_user_by_id($data) {
+	$query = $this->db->query("select * from user where id_user = '$data'");
+	return $query->result();
+    }
+
+    public function get_IP_hdd() {
+	$query = $this->db->query("select IP from harddisk");
+	return $query->result();
+    }
 }
 ?>
