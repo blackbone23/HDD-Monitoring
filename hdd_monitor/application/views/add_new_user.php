@@ -15,6 +15,21 @@
 echo "Edit Your Account : ".$this->session->userdata('username');
 ?>
 <h3>Edit User</h3>
+<?php 
+    if(isset($_GET['status']) && $_GET['status'] == 'not_complete') { 
+	echo "<div style='color:red; c'>lengkapi data diri</div>";
+    }
+    elseif(isset($_GET['status']) && $_GET['status'] == 'complete') { 
+	echo "<div style='color:green; font-weight:bold;'>user ".$_GET['user']." telah ditambahkan</div>";
+    }
+    elseif(isset($_GET['status']) && $_GET['status'] == 'duplicate') { 
+	echo "<div style='color:green; font-weight:bold;'>user ".$_GET['user']." sudah ada</div>";
+    }
+    elseif(isset($_GET['email_valid']) && $_GET['email_valid'] == "false" ) {
+	echo "<div style='font-weight:bold; color:red;'>Email tidak valid!</div>" ;
+    }	 
+
+?>
 <?php echo form_open('site/add_account');?>
 <table>
     <tr>
@@ -32,18 +47,7 @@ echo "Edit Your Account : ".$this->session->userdata('username');
 </table>
 
 <label for="submit"><input type="submit" value="Add User"/></label>
-<?php 
-    if(isset($_GET['status']) && $_GET['status'] == 'not_complete') { 
-	echo "<div style='color:red; font-weight:bold;'>lengkapi data diri</div>";
-    }
-    elseif(isset($_GET['status']) && $_GET['status'] == 'complete') { 
-	echo "<div style='color:green; font-weight:bold;'>user ".$_GET['user']." telah ditambahkan</div>";
-    }
-    elseif(isset($_GET['status']) && $_GET['status'] == 'duplicate') { 
-	echo "<div style='color:green; font-weight:bold;'>user ".$_GET['user']." sudah ada</div>";
-    }
 
-?>
 <?php form_close();?>
 
 <br/><br/>

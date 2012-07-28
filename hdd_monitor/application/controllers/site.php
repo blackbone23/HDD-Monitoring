@@ -78,9 +78,14 @@ class Site extends CI_Controller {
 		} else {
 			
 		}
-		$this->load->model('user');
-		$this->user->update_user($data);
-		redirect('site/edit_person_info');
+		if(preg_match("/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}$/",$data['email'],$matches)):
+			$this->load->model('user');
+			$this->user->update_user($data);
+			redirect('site/edit_person_info?edit_person=success');
+		else : 
+			redirect('site/edit_person_info?email_valid=false');
+		endif;
+		
         }
 		
 	 public function tambah_data() {
@@ -182,15 +187,7 @@ class Site extends CI_Controller {
 				$data['view_data'] = $this->view_data;
 				$this->load->view("view_charts", $data);
 			} else {
-				if($params['device'] != "-" && $params['month'] != "-" && $params['year'] != "-") {
-					$data['IP'] = $params['IP'];
-					$data['device'] = $params['device'];
-					$data['month'] = $params['month'];
-					$data['year'] = $params['year'];
-					$data['grafik'] = "yes";
-					$data['view_data'] = $this->view_data;
-					$this->load->view("view_charts", $data);
-				} elseif ($params['month'] != "-" && $params['year'] != "-") {
+				if ($params['month'] != "-" && $params['year'] != "-") {
 					$data['device'] = "all";
 					$data['IP'] = $params['IP'];
 					$data['month'] = $params['month'];
@@ -233,17 +230,22 @@ class Site extends CI_Controller {
 		$total_to_send = $total_explode[0].".".$total_explode_2." GB";
 
 		$query = $this->db->query('select * from user as a, harddisk as b where a.id_user = b.id_user');
-		
+
+		$email_sender = "rully.lukman@gmail.com";
+		$user_sender = "Administrator";
+		$email_subject = "Warning, your server hard disk exceed to 80%";
+		$email_message = "Hello $row->name,\n\nI'm sorry for your inconvenience, but your hard disk resource is exceed to 80% from total capacity. Here's result from our HDD Checker :\n\nIP : $IP\nPartition : $device\nFiletype : $filetype\nMount on : $mount_on\nUsed : $used_to_send\nFree : $free_to_send\nTotal : $total_to_send\nPercent used : $percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
+
 		foreach ($query->result() as $row) : 
 			$list_IP = $row->IP;
 			
 				if($list_IP == $IP) :
 					$row->email;
-					$this->email->from('rully.lukman@gmail.com', 'Administrator');
+					$this->email->from($email_sender, $user_sender);
 					$this->email->to($row->email);
 
-					$this->email->subject('Warning, your server hard disk exceed to 80%');
-					$this->email->message("Hello $row->name,\n\nI'm sorry for your inconvenience, but your hard disk resource is exceed to 80% from total capacity. Here's result from our HDD Checker :\n\nIP : $IP\nPartition : $device\nFiletype : $filetype\nMount on : $mount_on\nUsed : $used_to_send\nFree : $free_to_send\nTotal : $total_to_send\nPercent used : $percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator");
+					$this->email->subject($email_subject);
+					$this->email->message($email_message);
 
 					$this->email->send();
 					echo $this->email->print_debugger();
@@ -290,11 +292,14 @@ class Site extends CI_Controller {
 					$free = ((($row->free)/1000)/1000)/1000;
 					$total = ((($row->total)/1000)/1000)/1000;
 					$message= "Hello $username,\n\nHere's result for your hard disk statistic from our HDD Checker :\n\nIP : $IP\nPartition : $row->device\nFiletype : $row->filetype\nMount on : $row->mount_on\nUsed : $used GB\nFree : $free\nTotal : $total\nPercent used : $row->percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
+					$email_sender = "rully.lukman@gmail.com";
+					$user_sender = "Administrator";
+					$email_subject = "Statistic for your harddisk now";
 
-					$this->email->from('rully.lukman@gmail.com', 'Administrator');
+					$this->email->from($email_sender, $user_sender);
 					$this->email->to($user_data[0]->email);
 
-					$this->email->subject('Statistic for your harddisk now');
+					$this->email->subject($email_subject);
 					$this->email->message($message);
 
 					$this->email->send();
@@ -424,8 +429,12 @@ class Site extends CI_Controller {
 				redirect("site/add_user?status=duplicate&user=$new_user");
 			}
 		}
-		$this->modelhddmonitor->add_new_user($data);
-		redirect("site/add_user?status=complete&user=$new_user");
+		if(preg_match("/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}$/",$data['email'],$matches)):
+			$this->modelhddmonitor->add_new_user($data);
+			redirect("site/add_user?status=complete&user=$new_user");
+		else: 
+			redirect('site/add_user?email_valid=false');
+		endif;
 	}
 
 	public function edit_user_type() {

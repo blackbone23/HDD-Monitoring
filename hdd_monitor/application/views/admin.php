@@ -28,7 +28,7 @@
 	    <table border='1' cellspacing='0' cellpadding='5'>
 		<tr>
 		    <th>IP</th>
-		    <th>partition</th>
+		   <!-- <th>partition</th> -->
 		    <th>between</th>
 		    <th>get Statistic</th>
 		</tr>
@@ -45,18 +45,17 @@
 			<?php echo $row->IP ?>
 			<input type="hidden" name="IP" value="<?php echo $IP ?>" />
 		    </td>
-		    <td>
+		   <!-- <td>
 			<select name="device">
-			    <option value="-">-</option>
+			    <option value="-">-</option>-->
 			<?php
-			    echo
-			    $sql = $this->db->query("select device from hdd_device where IP = '$IP'");
-			   foreach($sql->result() as $row) {
-				echo "<option value='$row->device'>$row->device</option>";
-			    }
+			    //$sql = $this->db->query("select device from hdd_device where IP = '$IP'");
+			  // foreach($sql->result() as $row) {
+			//	echo "<option value='$row->device'>$row->device</option>";
+			   // }
 			?>
-			</select>
-		    </td>
+			<!--</select>
+		    </td>-->
 		    <td>
 		    <select name="month">
 	 		<option value="-">-</option>

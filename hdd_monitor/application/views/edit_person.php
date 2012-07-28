@@ -17,6 +17,11 @@ echo "Edit Your Account : ".$this->session->userdata('username');
 $user = $user[0];
 ?>
 <h3>Edit User</h3>
+<?php 
+
+if(isset($_GET['email_valid']) && $_GET['email_valid'] == "false" ) {echo "<div style='font-weight:bold; color:red;'>Email tidak valid!</div>" ;} 
+elseif(isset($_GET['edit_person']) && $_GET['edit_person'] == "success" ) {echo "<div style='font-weight:bold; color:green;'>Edit user berhasil!</div>" ;} 
+?>
 <?php echo form_open('site/edit_account');?>
 <input type="hidden" name="id_user" id="id_user" value="<?php echo $user->id_user; ?>"/>
 

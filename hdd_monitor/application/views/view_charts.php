@@ -168,6 +168,23 @@
 		    }
 			return $data_graph;
 		} 
+	    function get_device($IP) {
+		$sql = mysql_query("select device from hdd_device where IP = '$IP'");
+		while ($row = mysql_fetch_assoc($sql)) {
+		    $devices[] = $row['device'];
+		}
+		return $devices;
+	    }
+	    
+	    function get_username($IP) {
+		$sql = mysql_query("select username_hdd from harddisk where IP = '$IP'");
+		while ($row = mysql_fetch_assoc($sql)) {
+		    $name = $row['username_hdd'];
+		}
+		return $name;
+	    }
+	    
+	    $name = get_username($IP);
 	?>
 	<script type="text/javascript">
 
@@ -182,7 +199,7 @@
 		        text: 'HDD Space Consumption Month <?php echo switch_month($month)." ".$year; ?>'
 		     },
 		     subtitle: {
-		        text: 'Source : http://<?php echo $IP ?>'
+		        text: 'Source : http://<?php echo $IP ?> (user : <?php echo $name ?>)'
 		     },
 		     xAxis: {
 		        categories: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13', 'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20', 'Day 21', 'Day 22', 'Day 23', 'Day 24', 'Day 25', 'Day 26', 'Day 27', 'Day 28', 'Day 29', 'Day 30', 'Day 31']
@@ -225,6 +242,74 @@
 			]
 		  });
 	       });
+	   <?php 
+	    $n = 2;
+	    $devices = get_device($IP);
+	    foreach($devices as $device):
+               $container = "container".$n; 
+	   ?>
+	    var chart<?php echo $n;?>; // globally available
+		$(document).ready(function() {
+		    chart<?php echo $n;?> = new Highcharts.Chart({
+		    chart: {
+		        renderTo: '<?php echo $container; ?>',
+		        type: 'line'
+		     },
+		     title: {
+		        text: 'HDD Space Consumption Month <?php echo switch_month($month)." ".$year; ?>'
+		     },
+		     subtitle: {
+		        text: 'Source : http://<?php echo $IP ?> (user : <?php echo $name ?>)'
+		     },
+		     xAxis: {
+		        categories: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7', 'Day 8', 'Day 9', 'Day 10', 'Day 11', 'Day 12', 'Day 13', 'Day 14', 'Day 15', 'Day 16', 'Day 17', 'Day 18', 'Day 19', 'Day 20', 'Day 21', 'Day 22', 'Day 23', 'Day 24', 'Day 25', 'Day 26', 'Day 27', 'Day 28', 'Day 29', 'Day 30', 'Day 31']
+		     },
+		     yAxis: {
+		        title: {
+		           text: 'Percentage Used'
+		        },
+			labels: {
+		            formatter: function() {
+		                return this.value +'%'
+		            }
+		        }
+		     },
+		     tooltip: {
+		        crosshairs: true,
+		        shared: true
+			
+		     },
+		     plotOptions: {
+		        spline: {
+		            marker: {
+		                radius: 4,
+		                lineColor: '#666666',
+		                lineWidth: 1
+		            }
+		        }//,
+			//line: {
+                    	//	dataLabels: {
+                        //		enabled: true
+                    	//	},
+                    	//	enableMouseTracking: true
+                	//}
+		     },
+		     series: [
+			<?php
+			$data_array =  get_data_percent($IP,$device,$month, $year);
+			echo implode(",",$data_array);
+			?>
+			]
+		  });
+	       });
+
+	    <?php 
+		$n++;
+		endforeach; 
+	    ?>
+
+	    
+	    
 	</script>
 
 	</head>
@@ -232,7 +317,7 @@
 
 	<h1>Testing Highcharts</h1>
 
-		<?php echo $grafik == "no" ? "no result for your query" : "<div id='container'></div>" ; ?>
+		<?php echo $grafik == "no" ? "no result for your query" : "<div id='container'></div> <div id='container2' style='width:50%; float:left;'></div> <div id='container3' style='width:50%;'></div>" ; ?>
 	
 	<div id="bottom_nav">
 		<input type=button value="Back" onClick="window.history.back()">
