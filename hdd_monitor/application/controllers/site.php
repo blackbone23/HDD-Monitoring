@@ -215,16 +215,16 @@ class Site extends CI_Controller {
 		$device = $this->input->post('device');
 		$filetype = $this->input->post('filetype');
 		$mount_on = $this->input->post('mount_on');
-		$used = ((($this->input->post('used')/1000)/1000)/1000);
+		$used = ((($this->input->post('used')/1024)/1024)/1024);
 		$used_explode = explode(".",$used);
 		@$used_explode_2 = substr($used_explode[1], 0, 3);
 		$used_to_send = $used_explode[0].".".$used_explode_2." GB";
-		$free = ((($this->input->post('free')/1000)/1000)/1000);
+		$free = ((($this->input->post('free')/1024)/1024)/1024);
 		$free_explode = explode(".",$free);
 		@$free_explode_2 = substr($free_explode[1], 0, 3);
 		$free_to_send = $free_explode[0].".".$free_explode_2." GB";
 		$percent = $this->input->post('percent');
-		$total = ((($this->input->post('total')/1000)/1000)/1000);
+		$total = ((($this->input->post('total')/1024)/1024)/1024);
 		$total_explode = explode(".",$total);
 		@$total_explode_2 = substr($total_explode[1], 0, 3);
 		$total_to_send = $total_explode[0].".".$total_explode_2." GB";
@@ -234,7 +234,7 @@ class Site extends CI_Controller {
 		$email_sender = "tester.ryan212@gmail.com";
 		$user_sender = "Your Computer";
 		$email_subject = "Warning, your server hard disk exceed to 80%";
-		$email_message = "Hello $row->name,\n\nI'm sorry for your inconvenience, but your hard disk resource is exceed to 80% from total capacity. Here's result from our HDD Checker :\n\nIP : $IP\nPartition : $device\nFiletype : $filetype\nMount on : $mount_on\nUsed : $used_to_send\nFree : $free_to_send\nTotal : $total_to_send\nPercent used : $percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
+		$email_message = "Hello $row->name,\n\nI'm sorry for your inconvenience, but your hard disk resource is exceed to 80% from total capacity in partition $device. Here's result from our HDD Checker :\n\nIP : $IP\nPartition : $device\nFiletype : $filetype\nMount on : $mount_on\nUsed : $used_to_send\nFree : $free_to_send\nTotal : $total_to_send\nPercent used : $percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
 
 		foreach ($query->result() as $row) : 
 			$list_IP = $row->IP;
@@ -249,7 +249,8 @@ class Site extends CI_Controller {
 
 					$this->email->send();
 					$email_debugger = $this->email->print_debugger();
-					log_message('debug',$email_debugger);
+					var_dump($email_debugger);
+					//log_message('debug',$email_debugger);
 				endif;
 			
 		endforeach;
@@ -289,9 +290,9 @@ class Site extends CI_Controller {
 					$data['dynamiccontent'] = "view_hdd_status_now";
 					$row = $data['data_hdd'][0];
 					$user_data = $this->user->get_user();
-					$used = ((($row->used)/1000)/1000)/1000;
-					$free = ((($row->free)/1000)/1000)/1000;
-					$total = ((($row->total)/1000)/1000)/1000;
+					$used = ((($row->used)/1024)/1024)/1024;
+					$free = ((($row->free)/1024)/1024)/1024;
+					$total = ((($row->total)/1024)/1024)/1024;
 					$message= "Hello $username,\n\nHere's result for your hard disk statistic from our HDD Checker :\n\nIP : $IP\nPartition : $row->device\nFiletype : $row->filetype\nMount on : $row->mount_on\nUsed : $used GB\nFree : $free\nTotal : $total\nPercent used : $row->percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
 					$email_sender = "rully.lukman@gmail.com";
 					$user_sender = "Administrator";

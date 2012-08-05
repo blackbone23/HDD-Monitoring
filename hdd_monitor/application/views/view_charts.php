@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>HDD disk space checker by tr4c3r</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-	<script src="http://rully.tr4c3r.dev/HDD-Monitoring/hdd_monitor/public/highcharts/js/highcharts.js" type="text/javascript"></script>
-	<script src="http://rully.tr4c3r.dev/HDD-Monitoring/hdd_monitor/public/highcharts/js/modules/exporting.js"></script>
+	<script src="http://ryan.pakar/HDD-Monitoring/hdd_monitor/public/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ryan.pakar/HDD-Monitoring/hdd_monitor/public/highcharts/js/highcharts.js" type="text/javascript"></script>
+	<script src="http://ryan.pakar/HDD-Monitoring/hdd_monitor/public/highcharts/js/modules/exporting.js"></script>
 
 <style type="text/css">
 

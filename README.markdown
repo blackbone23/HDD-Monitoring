@@ -121,6 +121,8 @@ sudo pecl install ssh2 -> setelah liat version channel, copy & paste setelah ssh
 
 ===============================================================
 
+
+
 PHP PACKAGE : Jika sudah depresi, gunakan install php5-dev dan masalah anda akan terselesaikan :P
 
 

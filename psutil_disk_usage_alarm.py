@@ -22,7 +22,7 @@ for partition in partitions :
         check_slash = [('IP',IP),('mount on',mount), ('total',check_slash.total), ('used',check_slash.used), ('free',check_slash.free), ('percent',check_slash.percent), ('filetype',filesystype), ('device',device)]
 	c = pycurl.Curl()
 	resp_data = urllib.urlencode(check_slash)
-	c.setopt(pycurl.URL, 'http://rully.tr4c3r.dev/HDD-Monitoring/hdd_monitor/index.php/site/add_disk_alert')
+	c.setopt(pycurl.URL, 'http://ryan.pakar/HDD-Monitoring/hdd_monitor/index.php/site/add_disk_alert')
 	c.setopt(pycurl.POST, 1)
 	c.setopt(pycurl.POSTFIELDS, resp_data)
 	c.perform()
@@ -36,7 +36,7 @@ for partition in partitions :
         check_slash_home = [('IP',IP),('mount on',mount), ('total',check_slash_home.total), ('used',check_slash_home.used), ('free',check_slash_home.free), ('percent',check_slash_home.percent),  ('filetype',filesystype), ('device',device)]
 	c = pycurl.Curl()
 	resp_data = urllib.urlencode(check_slash_home)
-	c.setopt(pycurl.URL, 'http://rully.tr4c3r.dev/HDD-Monitoring/hdd_monitor/index.php/site/add_disk_alert')
+	c.setopt(pycurl.URL, 'http://ryan.pakar/HDD-Monitoring/hdd_monitor/index.php/site/add_disk_alert')
 	c.setopt(pycurl.POST, 1)
 	c.setopt(pycurl.POSTFIELDS, resp_data)
 	c.perform()
