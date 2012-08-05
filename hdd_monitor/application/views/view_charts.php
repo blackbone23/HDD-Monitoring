@@ -187,6 +187,23 @@ code {
     $name = get_username($IP);
 ?>
 <script type="text/javascript">
+    var zoomRatio = 1;
+    var lastX;
+    var lastY;
+    var mouseDown;
+	Highcharts.setOptions({
+	chart: {
+	    zoomType: 'xy'
+	}
+    });
+  
+    function createData() {
+	var arr = [];
+	for (var i = 0; i < 200; i++) {
+	    arr.push(Math.random()*100);
+	}
+	return arr;
+    }
 
     var chart1; // globally available
 	$(document).ready(function() {
@@ -242,6 +259,78 @@ code {
 		]
 	  });
 	});
+
+    var setZoom = function() {
+
+	var xMin = chart1.xAxis[0].getExtremes().dataMin;
+	var xMax = chart1.xAxis[0].getExtremes().dataMax;
+	var yMin = chart1.yAxis[0].getExtremes().dataMin;
+	var yMax = chart1.yAxis[0].getExtremes().dataMax;
+      
+
+	chart1.xAxis[0].setExtremes(xMin + (1 - zoomRatio) * xMax, xMax * zoomRatio);
+	chart1.yAxis[0].setExtremes(yMin + (1 - zoomRatio) * yMax, yMax * zoomRatio);
+    };
+
+    $('#resetZoom').click(function() {
+
+	var xExtremes = chart1.xAxis[0].getExtremes;
+	var yExtremes = chart1.yAxis[0].getExtremes;
+	chart1.xAxis[0].setExtremes(xExtremes.dataMin, xExtremes.dataMax);
+	chart1.yAxis[0].setExtremes(yExtremes.dataMin, yExtremes.dataMax);
+	zoomRatio = 1;
+	
+    });
+
+    $('#container').bind("contextmenu", function (e) {
+		    e.preventDefault();
+		});
+
+    $('#container').mousedown(function(b) {
+	switch(b.which.toString()) {
+		case '3':
+		    mouseDown = 1;
+		    break;
+	}
+    });
+
+    $('#container').mouseup(function(b) {
+	switch(b.which.toString()) {
+		case '3':
+		    mouseDown = 0;
+		    break;
+	}
+    });
+
+    $('#container').mousemove(function(e) {
+	if (mouseDown == 1) {
+	    if (e.pageX > lastX) {
+		var diff = e.pageX - lastX;
+		var xExtremes = chart1.xAxis[0].getExtremes();
+		chart1.xAxis[0].setExtremes(xExtremes.min - diff, xExtremes.max - diff);
+	    }
+	    else if (e.pageX < lastX) {
+		var diff = lastX - e.pageX;
+		var xExtremes = chart1.xAxis[0].getExtremes();
+		chart1.xAxis[0].setExtremes(xExtremes.min + diff, xExtremes.max + diff);
+	    }
+
+	    if (e.pageY > lastY) {
+		var ydiff = 1 * (e.pageY - lastY);
+		var yExtremes = chart1.yAxis[0].getExtremes();
+		chart1.yAxis[0].setExtremes(yExtremes.min + ydiff, yExtremes.max + ydiff);
+	    }
+	    else if (e.pageY < lastY) {
+		var ydiff = 1 * (lastY - e.pageY);
+		var yExtremes = chart1.yAxis[0].getExtremes();
+		chart1.yAxis[0].setExtremes(yExtremes.min - ydiff, yExtremes.max - ydiff);
+	    }
+	}
+	lastX = e.pageX;
+	lastY = e.pageY;
+    });
+
+
     <?php 
     $n = 2;
     $devices = get_device($IP);
@@ -303,6 +392,76 @@ code {
 	  });
 	});
 
+    var setZoom = function() {
+
+	var xMin = chart<?php echo $n;?>.xAxis[0].getExtremes().dataMin;
+	var xMax = chart<?php echo $n;?>.xAxis[0].getExtremes().dataMax;
+	var yMin = chart<?php echo $n;?>.yAxis[0].getExtremes().dataMin;
+	var yMax = chart<?php echo $n;?>.yAxis[0].getExtremes().dataMax;
+      
+
+	chart<?php echo $n;?>.xAxis[0].setExtremes(xMin + (1 - zoomRatio) * xMax, xMax * zoomRatio);
+	chart<?php echo $n;?>.yAxis[0].setExtremes(yMin + (1 - zoomRatio) * yMax, yMax * zoomRatio);
+    };
+
+    $('#resetZoom').click(function() {
+
+	var xExtremes = chart<?php echo $n;?>.xAxis[0].getExtremes;
+	var yExtremes = chart<?php echo $n;?>.yAxis[0].getExtremes;
+	chart<?php echo $n;?>.xAxis[0].setExtremes(xExtremes.dataMin, xExtremes.dataMax);
+	chart<?php echo $n;?>.yAxis[0].setExtremes(yExtremes.dataMin, yExtremes.dataMax);
+	zoomRatio = 1;
+	
+    });
+
+    $('#<?php echo $container; ?>').bind("contextmenu", function (e) {
+		    e.preventDefault();
+		});
+
+    $('#<?php echo $container; ?>').mousedown(function(b) {
+	switch(b.which.toString()) {
+		case '3':
+		    mouseDown = 1;
+		    break;
+	}
+    });
+
+    $('#<?php echo $container; ?>').mouseup(function(b) {
+	switch(b.which.toString()) {
+		case '3':
+		    mouseDown = 0;
+		    break;
+	}
+    });
+
+    $('#<?php echo $container; ?>').mousemove(function(e) {
+	if (mouseDown == 1) {
+	    if (e.pageX > lastX) {
+		var diff = e.pageX - lastX;
+		var xExtremes = chart<?php echo $n;?>.xAxis[0].getExtremes();
+		chart<?php echo $n;?>.xAxis[0].setExtremes(xExtremes.min - diff, xExtremes.max - diff);
+	    }
+	    else if (e.pageX < lastX) {
+		var diff = lastX - e.pageX;
+		var xExtremes = chart<?php echo $n;?>.xAxis[0].getExtremes();
+		chart<?php echo $n;?>.xAxis[0].setExtremes(xExtremes.min + diff, xExtremes.max + diff);
+	    }
+
+	    if (e.pageY > lastY) {
+		var ydiff = 1 * (e.pageY - lastY);
+		var yExtremes = chart<?php echo $n;?>.yAxis[0].getExtremes();
+		chart<?php echo $n;?>.yAxis[0].setExtremes(yExtremes.min + ydiff, yExtremes.max + ydiff);
+	    }
+	    else if (e.pageY < lastY) {
+		var ydiff = 1 * (lastY - e.pageY);
+		var yExtremes = chart<?php echo $n;?>.yAxis[0].getExtremes();
+		chart<?php echo $n;?>.yAxis[0].setExtremes(yExtremes.min - ydiff, yExtremes.max - ydiff);
+	    }
+	}
+	lastX = e.pageX;
+	lastY = e.pageY;
+    });
+
     <?php 
 	$n++;
 	endforeach; 
@@ -317,7 +476,7 @@ code {
 
 <h1>Testing Highcharts</h1>
 
-	<?php echo $grafik == "no" ? "no result for your query" : "<div id='container'></div> <div id='container2' style='width:50%; float:left;'></div> <div id='container3' style='width:50%;'></div>" ; ?>
+	<?php echo $grafik == "no" ? "no result for your query" : "<button id='resetZoom'>Reset</button><div id='container'></div> <div id='container2' style='width:50%; float:left;'></div> <div id='container3' style='width:50%;'></div>" ; ?>
 
 <div id="bottom_nav">
 	<input type=button value="Back" onClick="window.history.back()">

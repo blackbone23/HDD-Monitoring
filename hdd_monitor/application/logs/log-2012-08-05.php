@@ -244,3 +244,153 @@ DEBUG - 2012-08-05 14:40:00 --> Model Class Initialized
 DEBUG - 2012-08-05 14:40:00 --> Model Class Initialized
 DEBUG - 2012-08-05 14:40:00 --> Controller Class Initialized
 DEBUG - 2012-08-05 14:40:00 --> Model Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Config Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Hooks Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Utf8 Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> UTF-8 Support Enabled
+DEBUG - 2012-08-05 14:47:08 --> URI Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Router Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Output Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Security Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Input Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2012-08-05 14:47:08 --> Language Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Loader Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Helper loaded: url_helper
+DEBUG - 2012-08-05 14:47:08 --> Helper loaded: form_helper
+DEBUG - 2012-08-05 14:47:08 --> Helper loaded: html_helper
+DEBUG - 2012-08-05 14:47:08 --> Database Driver Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Form Validation Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Session Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Helper loaded: string_helper
+DEBUG - 2012-08-05 14:47:08 --> Session routines successfully run
+DEBUG - 2012-08-05 14:47:08 --> Model Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Model Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Controller Class Initialized
+DEBUG - 2012-08-05 14:47:08 --> Model Class Initialized
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: IP /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 187
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: name /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 184
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: month /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 199
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: year /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 199
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: IP /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 202
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: IP /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 239
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: device /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 239
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: month /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 239
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: year /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 239
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: mount_point /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 164
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: data_single /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 164
+ERROR - 2012-08-05 14:47:08 --> Severity: Warning  --> implode() [<a href='http://localhost/php-doc/function.implode.html'>function.implode.html</a>]: Invalid arguments passed /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 164
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: IP /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 247
+ERROR - 2012-08-05 14:47:08 --> Severity: Notice  --> Undefined variable: devices /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 176
+ERROR - 2012-08-05 14:47:08 --> Severity: Warning  --> Invalid argument supplied for foreach() /home/rully/git/HDD-Monitoring/hdd_monitor/application/views/view_charts.php 248
+DEBUG - 2012-08-05 14:47:08 --> File loaded: application/views/view_charts.php
+DEBUG - 2012-08-05 14:47:08 --> Final output sent to browser
+DEBUG - 2012-08-05 14:47:08 --> Total execution time: 0.0126
+DEBUG - 2012-08-05 14:47:15 --> Config Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Hooks Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Utf8 Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> UTF-8 Support Enabled
+DEBUG - 2012-08-05 14:47:15 --> URI Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Router Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Output Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Security Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Input Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2012-08-05 14:47:15 --> Language Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Loader Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Helper loaded: url_helper
+DEBUG - 2012-08-05 14:47:15 --> Helper loaded: form_helper
+DEBUG - 2012-08-05 14:47:15 --> Helper loaded: html_helper
+DEBUG - 2012-08-05 14:47:15 --> Database Driver Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Form Validation Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Session Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Helper loaded: string_helper
+DEBUG - 2012-08-05 14:47:15 --> Session routines successfully run
+DEBUG - 2012-08-05 14:47:15 --> Model Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Model Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Controller Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> Model Class Initialized
+DEBUG - 2012-08-05 14:47:15 --> File loaded: application/views/view_charts.php
+DEBUG - 2012-08-05 14:47:15 --> Final output sent to browser
+DEBUG - 2012-08-05 14:47:15 --> Total execution time: 0.0110
+DEBUG - 2012-08-05 14:52:24 --> Config Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Hooks Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Utf8 Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> UTF-8 Support Enabled
+DEBUG - 2012-08-05 14:52:24 --> URI Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Router Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Output Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Security Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Input Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2012-08-05 14:52:24 --> Language Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Loader Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Helper loaded: url_helper
+DEBUG - 2012-08-05 14:52:24 --> Helper loaded: form_helper
+DEBUG - 2012-08-05 14:52:24 --> Helper loaded: html_helper
+DEBUG - 2012-08-05 14:52:24 --> Database Driver Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Form Validation Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Session Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Helper loaded: string_helper
+DEBUG - 2012-08-05 14:52:24 --> Session routines successfully run
+DEBUG - 2012-08-05 14:52:24 --> Model Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Model Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Controller Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> Model Class Initialized
+DEBUG - 2012-08-05 14:52:24 --> File loaded: application/views/view_charts.php
+DEBUG - 2012-08-05 14:52:24 --> Final output sent to browser
+DEBUG - 2012-08-05 14:52:24 --> Total execution time: 0.0118
+DEBUG - 2012-08-05 14:58:38 --> Config Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Hooks Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Utf8 Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> UTF-8 Support Enabled
+DEBUG - 2012-08-05 14:58:38 --> URI Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Router Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Output Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Security Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Input Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2012-08-05 14:58:38 --> Language Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Loader Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Helper loaded: url_helper
+DEBUG - 2012-08-05 14:58:38 --> Helper loaded: form_helper
+DEBUG - 2012-08-05 14:58:38 --> Helper loaded: html_helper
+DEBUG - 2012-08-05 14:58:38 --> Database Driver Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Form Validation Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Session Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Helper loaded: string_helper
+DEBUG - 2012-08-05 14:58:38 --> Session routines successfully run
+DEBUG - 2012-08-05 14:58:38 --> Model Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Model Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Controller Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> Model Class Initialized
+DEBUG - 2012-08-05 14:58:38 --> File loaded: application/views/view_charts.php
+DEBUG - 2012-08-05 14:58:38 --> Final output sent to browser
+DEBUG - 2012-08-05 14:58:38 --> Total execution time: 0.0108
+DEBUG - 2012-08-05 15:02:44 --> Config Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Hooks Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Utf8 Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> UTF-8 Support Enabled
+DEBUG - 2012-08-05 15:02:44 --> URI Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Router Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Output Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Security Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Input Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2012-08-05 15:02:44 --> Language Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Loader Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Helper loaded: url_helper
+DEBUG - 2012-08-05 15:02:44 --> Helper loaded: form_helper
+DEBUG - 2012-08-05 15:02:44 --> Helper loaded: html_helper
+DEBUG - 2012-08-05 15:02:44 --> Database Driver Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Form Validation Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Session Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Helper loaded: string_helper
+DEBUG - 2012-08-05 15:02:44 --> Session routines successfully run
+DEBUG - 2012-08-05 15:02:44 --> Model Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Model Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Controller Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> Model Class Initialized
+DEBUG - 2012-08-05 15:02:44 --> File loaded: application/views/view_charts.php
+DEBUG - 2012-08-05 15:02:44 --> Final output sent to browser
+DEBUG - 2012-08-05 15:02:44 --> Total execution time: 0.0119
