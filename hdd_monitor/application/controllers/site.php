@@ -283,8 +283,8 @@ class Site extends CI_Controller {
 			} else {
 				if(!ssh2_auth_password($ssh, $data['username'], $hdd->password_hdd)) {
 					echo "authentication rejected!";
-				} else {
-					$data_hdd = exec('/home/'.$data['username'].'/git/HDD-Monitoring/psutil_disk_usage_json.py');
+				} else { 
+					$data_hdd = exec('/home/'.$data['username'].'/git/HDD-Monitoring/psutil_disk_usage_json.py'); var_dump($data_hdd);
 					$data['data_hdd'] = json_decode($data_hdd);
 					$data['title'] = "View HDD statistic now - ".$this->session->userdata('username');
 					$data['dynamiccontent'] = "view_hdd_status_now";
@@ -307,7 +307,7 @@ class Site extends CI_Controller {
 					$this->email->send();
 					//echo $this->email->print_debugger();
 
-					$this->load->view("templates/template",$data);
+					//$this->load->view("templates/template",$data);
 				}
 			}
 			

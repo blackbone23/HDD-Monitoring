@@ -65,7 +65,7 @@ class Modelhddmonitor extends CI_Model {
         $username = $this->session->userdata('username');
 	$id_user_query = $this->modelhddmonitor->get_id_user_by_username();
 	$id_user = $id_user_query[0]->id_user;
-	$user_query = $this->db->query("select * from user as a, harddisk as b where b.id_user=a.id_user & a.id_user='$id_user'");
+	$user_query = $this->db->query("select * from user as a, harddisk as b where b.id_user=a.id_user && a.id_user='$id_user'");
 	$user = $user_query->result();
 	if(!empty($user)) {
 	    foreach($user as $row) {

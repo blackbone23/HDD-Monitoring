@@ -118,7 +118,8 @@ code {
 		    $days = total_days_month($month,$year);
 		    $n = "0";
 		    for($i=1;$i<=$days;$i++) {
-			if(($i %$values[$n][0]) == 0) {
+			if(!isset($values[$n][0])){$data_single[] = "0";}
+			elseif(($i %$values[$n][0]) == 0) {
 			    $data_single[] = $values[$n][1];
 			    $n++;
 			} else {
@@ -151,7 +152,8 @@ code {
 		$days = total_days_month($month,$year);
 		$n = "0";
 		for($i=1;$i<=$days;$i++) {
-		    if(($i %$values[$n][0]) == 0) {
+		    if(!isset($values[$n][0])){$data_single[] = "0";}
+		    elseif(($i %$values[$n][0]) == 0) {
 			$data_single[] = $values[$n][1];
 			$n++;
 		    } else {

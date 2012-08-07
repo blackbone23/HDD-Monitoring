@@ -52,7 +52,7 @@ elseif(isset($_GET['edit_person']) && $_GET['edit_person'] == "success" ) {echo 
 <?php form_close();?>
 
 <br/><br/>
-<a href="show_hdd_info">HDD settings</a><br/>
+<a href="show_hdd_info"></a><br/>
 <a href="admin">Back to home</a>
 </div>
 </div>
