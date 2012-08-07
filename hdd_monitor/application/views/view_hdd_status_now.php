@@ -16,7 +16,6 @@
 	    <h3>HDD status for IP : <?php echo $IP; ?> </h3>
 
 	 <div class="hdd_username">HDD Username : <?php echo $username ?></div> <br/>
-<?php var_dump($data_hdd); ?>	
 	<?php foreach($data_hdd as $row) :?>
 	    <div class="hdd_mount">HDD statistic mounted on : <?php echo $row->mount_on ?></div>
 	    <table style="border:0;">

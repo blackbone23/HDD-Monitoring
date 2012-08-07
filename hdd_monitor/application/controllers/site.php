@@ -284,30 +284,33 @@ class Site extends CI_Controller {
 				if(!ssh2_auth_password($ssh, $data['username'], $hdd->password_hdd)) {
 					echo "authentication rejected!";
 				} else { 
-					$data_hdd = exec('/home/'.$data['username'].'/git/HDD-Monitoring/psutil_disk_usage_json.py'); var_dump($data_hdd);
-					$data['data_hdd'] = json_decode($data_hdd);
-					$data['title'] = "View HDD statistic now - ".$this->session->userdata('username');
-					$data['dynamiccontent'] = "view_hdd_status_now";
-					$row = $data['data_hdd'][0];
-					$user_data = $this->user->get_user();
-					$used = ((($row->used)/1024)/1024)/1024;
-					$free = ((($row->free)/1024)/1024)/1024;
-					$total = ((($row->total)/1024)/1024)/1024;
-					$message= "Hello $username,\n\nHere's result for your hard disk statistic from our HDD Checker :\n\nIP : $IP\nPartition : $row->device\nFiletype : $row->filetype\nMount on : $row->mount_on\nUsed : $used GB\nFree : $free\nTotal : $total\nPercent used : $row->percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
-					$email_sender = "rully.lukman@gmail.com";
-					$user_sender = "Administrator";
-					$email_subject = "Statistic for your harddisk now";
+					$stdout_stream = ssh2_exec($ssh, '/home/'.$data["username"].'/git/hdd_monitor_script/psutil_disk_usage_json.py');
+					sleep(1);
+					$line = fgets($stdout_stream);
+					$data['data_hdd'] = json_decode($line); 
+					foreach($data['data_hdd'] as $row) { //var_dump($row); echo "<br/><br/>";
+						$data['title'] = "View HDD statistic now - ".$this->session->userdata('username');
+						$data['dynamiccontent'] = "view_hdd_status_now";
+						$user_data = $this->user->get_user();
+						$used = ((($row->used)/1024)/1024)/1024;
+						$free = ((($row->free)/1024)/1024)/1024;
+						$total = ((($row->total)/1024)/1024)/1024;
+						$message= "Hello $username,\n\nHere's result for your hard disk statistic from our HDD Checker :\n\nIP : $IP\nPartition : $row->device\nFiletype : $row->filetype\nMount on : $row->mount_on\nUsed : $used GB\nFree : $free\nTotal : $total\nPercent used : $row->percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";
+						$email_sender = "ryan.tester212@gmail.com";
+						$user_sender = "Your Computer";
+						$email_subject = "Statistic for your harddisk now";
 
-					$this->email->from($email_sender, $user_sender);
-					$this->email->to($user_data[0]->email);
+						$this->email->from($email_sender, $user_sender);
+						$this->email->to($user_data[0]->email);
 
-					$this->email->subject($email_subject);
-					$this->email->message($message);
+						$this->email->subject($email_subject);
+						$this->email->message($message);
 
-					$this->email->send();
-					//echo $this->email->print_debugger();
+						$this->email->send();
+						//echo $this->email->print_debugger();
+					}
 
-					//$this->load->view("templates/template",$data);
+					$this->load->view("templates/template",$data);
 				}
 			}
 			
