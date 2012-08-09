@@ -90,3 +90,17 @@ Install urllib :
 5. ssmtp
 
 	http://tombuntu.com/index.php/2008/10/21/sending-email-from-your-system-with-ssmtp/
+
+
+6. rsync 
+
+rsync adalah tools dari bash linux untuk sync data dari satu partition/drive/device/folder satu dan yang lainnya, namun lebih memudahkan jika dilakukan untuk yang berbeda PC/IP. 
+
+Struktur:
+	rsync <option> <source> <target>
+
+Contoh rsync 1 file ke target:
+	rsync -vP /home/<user_source>/<folder>/<file> <user_target>@<IP_target>:/home/<user_target>/<folder>/
+
+Contoh rsync seluruh file di folder source ke target:
+	rsync -vP /home/<user_source>/<folder>/* <user_target>@<IP_target>:/home/<user_target>/<folder>/
