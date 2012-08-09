@@ -231,7 +231,7 @@ class Site extends CI_Controller {
 
 		$query = $this->db->query('select * from user as a, harddisk as b where a.id_user = b.id_user');
 
-		$email_sender = "tester.ryan212@gmail.com";
+		$email_sender = "tester.ryan@gmail.com";
 		$user_sender = "Your Computer";
 		$email_subject = "Warning, your server hard disk exceed to 80%";
 		$email_message = "Hello $row->name,\n\nI'm sorry for your inconvenience, but your hard disk resource is exceed to 80% from total capacity in partition $device. Here's result from our HDD Checker :\n\nIP : $IP\nPartition : $device\nFiletype : $filetype\nMount on : $mount_on\nUsed : $used_to_send\nFree : $free_to_send\nTotal : $total_to_send\nPercent used : $percent%\n\n\nThank you for your attention.\n\nRegards,\n\n\nAdministrator";

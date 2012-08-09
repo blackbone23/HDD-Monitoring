@@ -99,7 +99,7 @@ code {
 
     function get_data_percent($IP,$device,$month, $year) {
 	    if($device == "all") { 
-		$sql = mysql_query("select device from hdd_device where IP = '$IP'");
+		$sql = mysql_query("select device from hdd_device where IP = '$IP' order by device asc");
 		while ($row = mysql_fetch_assoc($sql)) {
 		    $devices[] = $row['device'];
 		}
@@ -171,7 +171,7 @@ code {
 		return $data_graph;
 	} 
     function get_device($IP) {
-	$sql = mysql_query("select device from hdd_device where IP = '$IP'");
+	$sql = mysql_query("select device from hdd_device where IP = '$IP' order by device asc");
 	while ($row = mysql_fetch_assoc($sql)) {
 	    $devices[] = $row['device'];
 	}
