@@ -155,3 +155,7 @@ html, body {
 text-align: center;
 }
 p {text-align: left;}
+
+.images img {
+    padding: 10px;
+}

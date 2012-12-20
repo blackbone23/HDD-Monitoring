@@ -1,9 +1,9 @@
 <div id="title">HDD Monitoring</div>
 
 <div id="linkGroup">
-    <div class="link"><a href="view_hdd_status_now">HDD Status</a></div>
-    <div class="link"><a href="edit_person_info">Account</a></div>
-    <div class="link"><a href="show_hdd_info">HDD settings</a></div>
+    <div class="link"><a href="view_hdd_status_now">Monitoring</a></div>
+    <div class="link"><a href="reporting">Reporting</a></div>
+    <div class="link"><a href="show_hdd_info">Modifiying</a></div>
     <div class="link"><a href="logout">logout</a></div>
 </div>
 
@@ -35,7 +35,31 @@
 		    <td><?php echo $row->IP ?></td>
 		    <td><?php echo $row->username_hdd ?></td>
 		    <td><?php echo $row->password_hdd ?></td>
-		    <td><a href="edit_hdd_info?IP=<?php echo $row->IP ?>">Edit</a>  <a href="delete_hdd?IP=<?php echo $row->IP ?>">Delete</a></td>
+		    <td>
+			<a href="edit_hdd_info?IP=<?php echo $row->IP ?>">Edit</a>  
+			<a href="delete_hdd?IP=<?php echo $row->IP ?>">Delete</a> 
+			<?php
+			      $username = $this->session->userdata('username');
+			     if (!empty($username)) {
+				    $hdd_query = $this->modelhddmonitor->get_hdd_by_IP($row->IP);
+				    $hdd = $hdd_query[0];
+				    $IP = $hdd->IP;
+				    $username_hdd = $hdd->username_hdd;
+				    if(!$ssh = ssh2_connect($IP, 22)){
+					    echo "Couldn't connect to ".$IP."!";
+				    } else { 
+					    if(!ssh2_auth_password($ssh, $username_hdd, $hdd->password_hdd)) {
+						    echo "authentication rejected!";
+					    } else {
+						    //if(is_dir('/home/'.$username_hdd.'/public_html/eXtplorer')){
+							  echo '<a href="http://'.$IP.'/eXtplorer" target="_blank">Explore</a>';
+//						    }
+					    }
+				    }
+				    
+			    }
+			?>
+		    </td>
 		</tr>	
 	    <?php endforeach; ?>
 	    </table>
@@ -45,7 +69,7 @@
 	<?php 
 	}
 	?>
-	    <a href="add_new_hdd">add new hdd</a> <br/>
+	    <a href="add_new_hdd"></a> <br/>
 	    <a href="admin">back</a>
 
 	    

@@ -1,8 +1,8 @@
 <div id="title">HDD Monitoring</div>
 
 <div id="linkGroup">
-<div class="link"><a href="view_hdd_status_now">HDD Status</a></div>
-<div class="link"><a href="edit_person_info">Account</a></div>
+<div class="link"><a href="view_hdd_status_now">Monitoring</a></div>
+<div class="link"><a href="reporting">Reporting</a></div>
 <div class="link"><a href="show_hdd_info">HDD settings</a></div>
 <div class="link"><a href="logout">logout</a></div>
 </div>

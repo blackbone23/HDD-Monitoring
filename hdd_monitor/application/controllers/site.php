@@ -20,6 +20,20 @@ class Site extends CI_Controller {
 			redirect('hdd_monitor');
 		}
         }
+
+	public function reporting() {
+		$username = $this->session->userdata('username');
+		if (!empty($username)) {
+			$data['dynamiccontent'] = "reporting";
+			$data['title'] = "Welcome - $username";
+			$query_user_type = $this->modelhddmonitor->get_user_type();
+			$data['user_type'] = $query_user_type[0]->user_type;
+			$data['query'] = $this->modelhddmonitor->view_device();
+			$this->load->view('templates/template',$data);
+		} else {
+			redirect('hdd_monitor');
+		}
+        }
 	
 	public function user() {
 		$username = $this->session->userdata('username');

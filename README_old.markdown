@@ -1,3 +1,4 @@
+rully.tr4c3r
 must installed first : 
 sudo apt-get install apache2
 sudo apt-get install php5-fpm
@@ -10,13 +11,13 @@ sudo apt-get install libapache2-mod-php5
 =============================================================
 
 configuring apache2 : 
-sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/hdd_monitor (tambahkan site baru di dalam apache)
-
+sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/ryan (tambahkan site baru di dalam apache)
+ServerName ${your_server_name}
 =============================================================
 
 edit file /etc/apache2/sites-available/hdd_monitor : 
 
-add -> ServerName ${your_server_name} (sebelum DocumentRoot & hilangkan ServerAdmin)
+add ->  (sebelum DocumentRoot & hilangkan ServerAdmin)
 
 Change DocumentRoot /var/www to DocumentRoot /home/${user}/public_html.
 
